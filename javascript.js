@@ -136,6 +136,10 @@ function isAtStart(x, y) {
     return Math.sqrt((x - allowedPath[0].x) ** 2 + (y - allowedPath[0].y) ** 2) < tolerance;
 }
 
+function isAtEnd(x, y) {
+    return Math.sqrt((x - allowedPath[allowedPath.length - 1].x) ** 2 + (y - allowedPath[allowedPath.length - 1].y) ** 2) < tolerance;
+}
+
 // Teken het gewenste pad op het canvas
 function drawAllowedPath() {
     ctx.strokeStyle = "gray";
@@ -154,8 +158,13 @@ c.addEventListener("mousedown", function (e) {
     var pos = getMousePos(e);
 
     if (!isAtStart(pos.x, pos.y)) {
-        alert("Je moet beginnen bij het beginpunt van het pad (x: 0, y: 0).");
+        alert("Begin bij de start!");
         return; // Alleen starten als de gebruiker op het beginpunt klikt
+    }
+
+    if (isAtEnd(pos.x, pos.y)) {
+        alert("Je bent op het eindpunt!");
+        return;
     }
 
     drawing = true;
@@ -184,6 +193,11 @@ c.addEventListener("mousemove", function (e) {
 
         startX = pos.x;
         startY = pos.y;
+
+        if (isAtEnd(pos.x, pos.y)) {
+            alert("Gefeliciteerd! Je hebt het einde bereikt!");
+            drawing = false;
+        }
     }
 });
 
