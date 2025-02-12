@@ -18,59 +18,178 @@
 
 
 //Stap 2
-var c = document.getElementById("myCanvas");
-var ctx = c.getContext("2d");
+// var c = document.getElementById("myCanvas");
+// var ctx = c.getContext("2d");
 
-var drawing = false; //Houdt bij of de gebruiker aan het tekenen is
-var startX, startY; //Houdt bij de startposities
+// var drawing = false; //Houdt bij of de gebruiker aan het tekenen is
+// var startX, startY; //Houdt bij de startposities
 
-function getMousePos(e) {
-    var rect = c.getBoundingClientRect();
-    return {
-        x: (e.clientX - rect.left) * (c.width / rect.width),  // Correctie voor geschaalde canvas
-        y: (e.clientY - rect.top) * (c.height / rect.height)  // Correctie voor geschaalde canvas
-    };
-}
+// function getMousePos(e) {
+//     var rect = c.getBoundingClientRect();
+//     return {
+//         x: (e.clientX - rect.left) * (c.width / rect.width),  // Correctie voor geschaalde canvas
+//         y: (e.clientY - rect.top) * (c.height / rect.height)  // Correctie voor geschaalde canvas
+//     };
+// }
 
-c.addEventListener("mousedown", function (e) {
-    drawing = true; //De gebruiker is aan het tekenen
-    var pos = getMousePos(e); //Houdt bij de actuele positie van de muis
-    startX = pos.x; //Houdt bij de startpositie
-    startY = pos.y; //Houdt bij de startpositie
-});
+// c.addEventListener("mousedown", function (e) {
+//     drawing = true; //De gebruiker is aan het tekenen
+//     var pos = getMousePos(e); //Houdt bij de actuele positie van de muis
+//     startX = pos.x; //Houdt bij de startpositie
+//     startY = pos.y; //Houdt bij de startpositie
+// });
 
-c.addEventListener("mousemove", function (e) {
-    if (drawing) { //Checkt of de gebruiker aan het tekenen is
-        var pos = getMousePos(e); //Haalt de positie op van de muis
+// c.addEventListener("mousemove", function (e) {
+//     if (drawing) { //Checkt of de gebruiker aan het tekenen is
+//         var pos = getMousePos(e); //Haalt de positie op van de muis
         
-        // Reset canvas en teken lijn tijdens bewegen
-        // ctx.clearRect(0, 0, c.width, c.height);
-        ctx.beginPath();
-        ctx.moveTo(startX, startY); //Deze lijn en de lijn hieronder zorgen voor een live preview van de lijn
-        ctx.lineTo(pos.x, pos.y);
-        ctx.strokeStyle = "black";
-        ctx.lineWidth = 2;
-        ctx.stroke();
-    }
-});
+//         // Reset canvas en teken lijn tijdens bewegen
+//         // ctx.clearRect(0, 0, c.width, c.height);
+//         ctx.beginPath();
+//         ctx.moveTo(startX, startY); //Deze lijn en de lijn hieronder zorgen voor een live preview van de lijn
+//         ctx.lineTo(pos.x, pos.y);
+//         ctx.strokeStyle = "black";
+//         ctx.lineWidth = 2;
+//         ctx.stroke();
+//     }
+// });
 
-c.addEventListener("mouseup", function (e) {
-    if (drawing) {
-        var pos = getMousePos(e);
-        ctx.beginPath();
-        ctx.moveTo(startX, startY); //Haalt de eindpositie op
-        ctx.lineTo(pos.x, pos.y); //Tekent de defenitieve lijn van 
-        ctx.strokeStyle = "black";
-        ctx.lineWidth = 2;
-        ctx.stroke();
+// c.addEventListener("mouseup", function (e) {
+//     if (drawing) {
+//         var pos = getMousePos(e);
+//         ctx.beginPath();
+//         ctx.moveTo(startX, startY); //Haalt de eindpositie op
+//         ctx.lineTo(pos.x, pos.y); //Tekent de defenitieve lijn van 
+//         ctx.strokeStyle = "black";
+//         ctx.lineWidth = 2;
+//         ctx.stroke();
 
-        drawing = false; //Zorgt ervoor dat je een nieuwe lijn kan tekenen
-    }
-});
+//         drawing = false; //Zorgt ervoor dat je een nieuwe lijn kan tekenen
+//     }
+// });
 
 
 
 //Stap 3
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+
+var drawing = false;
+var startX, startY;
+var allowedPath = [
+    {x: 0, y: 0}, {x: 50, y: 150}, {x: 100, y: 0}, 
+    {x: 150, y: 150}, {x: 200, y: 0}, {x: 250, y: 150}, {x: 300, y: 0}
+]; // Zigzag-patroon
+var tolerance = 10; // Hoe ver de gebruiker mag afwijken
+
+// Functie om de muispositie binnen het canvas te berekenen
+function getMousePos(e) {
+    var rect = c.getBoundingClientRect();
+    return {
+        x: (e.clientX - rect.left) * (c.width / rect.width),
+        y: (e.clientY - rect.top) * (c.height / rect.height)
+    };
+}
+
+// Functie om de kortste afstand tussen een punt en een lijnsegment te berekenen
+function distanceToSegment(px, py, x1, y1, x2, y2) {
+    let A = px - x1;
+    let B = py - y1;
+    let C = x2 - x1;
+    let D = y2 - y1;
+
+    let dot = A * C + B * D;
+    let len_sq = C * C + D * D;
+    let param = len_sq !== 0 ? dot / len_sq : -1;
+
+    let nearestX, nearestY;
+    if (param < 0) {
+        nearestX = x1;
+        nearestY = y1;
+    } else if (param > 1) {
+        nearestX = x2;
+        nearestY = y2;
+    } else {
+        nearestX = x1 + param * C;
+        nearestY = y1 + param * D;
+    }
+
+    let dx = px - nearestX;
+    let dy = py - nearestY;
+    return Math.sqrt(dx * dx + dy * dy);
+}
+
+// Functie om te controleren of de gebruiker op het juiste pad zit
+function isOnPath(x, y) {
+    for (let i = 0; i < allowedPath.length - 1; i++) {
+        let x1 = allowedPath[i].x;
+        let y1 = allowedPath[i].y;
+        let x2 = allowedPath[i + 1].x;
+        let y2 = allowedPath[i + 1].y;
+        if (distanceToSegment(x, y, x1, y1, x2, y2) < tolerance) return true;
+    }
+    return false;
+}
+
+// Functie om te controleren of de gebruiker precies op het beginpunt (0, 0) klikt
+function isAtStart(x, y) {
+    return Math.sqrt((x - allowedPath[0].x) ** 2 + (y - allowedPath[0].y) ** 2) < tolerance;
+}
+
+// Teken het gewenste pad op het canvas
+function drawAllowedPath() {
+    ctx.strokeStyle = "gray";
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(allowedPath[0].x, allowedPath[0].y);
+    for (let i = 1; i < allowedPath.length; i++) {
+        ctx.lineTo(allowedPath[i].x, allowedPath[i].y);
+    }
+    ctx.stroke();
+}
+
+drawAllowedPath(); // We tekenen het pad zodra de pagina laadt
+
+c.addEventListener("mousedown", function (e) {
+    var pos = getMousePos(e);
+
+    if (!isAtStart(pos.x, pos.y)) {
+        alert("Je moet beginnen bij het beginpunt van het pad (x: 0, y: 0).");
+        return; // Alleen starten als de gebruiker op het beginpunt klikt
+    }
+
+    drawing = true;
+    startX = pos.x;
+    startY = pos.y;
+});
+
+c.addEventListener("mousemove", function (e) {
+    if (drawing) {
+        var pos = getMousePos(e);
+
+        if (!isOnPath(pos.x, pos.y)) {
+            alert("Je bent van het pad af! Probeer opnieuw.");
+            ctx.clearRect(0, 0, c.width, c.height); // Wis het canvas
+            drawAllowedPath(); // Teken opnieuw het pad
+            drawing = false;
+            return;
+        }
+
+        ctx.beginPath();
+        ctx.moveTo(startX, startY);
+        ctx.lineTo(pos.x, pos.y);
+        ctx.strokeStyle = "blue";
+        ctx.lineWidth = 2;
+        ctx.stroke();
+
+        startX = pos.x;
+        startY = pos.y;
+    }
+});
+
+c.addEventListener("mouseup", function () {
+    drawing = false;
+});
 
 
   
