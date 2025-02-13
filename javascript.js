@@ -204,6 +204,3 @@ c.addEventListener("mousemove", function (e) {
 c.addEventListener("mouseup", function () {
     drawing = false;
 });
-
-
-  
