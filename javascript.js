@@ -142,7 +142,7 @@ function isAtEnd(x, y) {
 
 // Teken het gewenste pad op het canvas
 function drawAllowedPath() {
-    ctx.strokeStyle = "gray";
+    ctx.strokeStyle = "white";
     ctx.lineWidth = 2;
     ctx.beginPath();
     ctx.moveTo(allowedPath[0].x, allowedPath[0].y);
