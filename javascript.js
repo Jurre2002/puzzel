@@ -204,3 +204,15 @@ c.addEventListener("mousemove", function (e) {
 c.addEventListener("mouseup", function () {
     drawing = false;
 });
+
+// Verkrijg de opgeslagen content uit sessionStorage
+const content = sessionStorage.getItem("containerContent");
+
+// Zet de inhoud in het HTML-element
+if (content) {
+    document.getElementById("newContent").textContent = content; // Zet de content in het h1 element
+} else {
+    document.getElementById("newContent").textContent = "Hallo"; // Fallback als geen content is opgeslagen
+}
+
+
