@@ -52,19 +52,37 @@ closeButtons.forEach(function(button) {
 });
 
 // Functie om de inhoud van een container op te slaan in sessionStorage
-function saveContent(containerId) {
-    const content = document.querySelector(`#${containerId} h1`).textContent; // Haal de tekst op uit de container
-    sessionStorage.setItem("containerContent", content); // Sla de tekst op in sessionStorage
+function saveContent(containerClass, key) {
+    const content = document.querySelector(`.${containerClass} h1`).textContent; 
+    sessionStorage.setItem(key, content);
 }
 
-// Event listeners voor de knoppen op de andere pagina
+// Event listeners voor de knoppen
 document.getElementById("knop1").addEventListener("click", function(event) {
-    event.preventDefault(); // Voorkom standaard gedrag van de link
-    saveContent("container2"); // Sla de inhoud van container2 op
+    event.preventDefault();
+    saveContent("container2", "content1");
 });
 
 document.getElementById("knop2").addEventListener("click", function(event) {
-    event.preventDefault(); // Voorkom standaard gedrag van de link
-    saveContent("container3"); // Sla de inhoud van container3 op
+    event.preventDefault();
+    saveContent("container3", "content2");
 });
+
+document.getElementById("knop3").addEventListener("click", function(event) {
+    event.preventDefault();
+    saveContent("container4", "content3");
+});
+
+document.getElementById("knop4").addEventListener("click", function(event) {
+    event.preventDefault();
+    saveContent("container5", "content4");
+});
+
+document.getElementById("knop5").addEventListener("click", function(event) {
+    event.preventDefault();
+    saveContent("container6", "content5");
+});
+
+
+
 

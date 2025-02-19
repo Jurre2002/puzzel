@@ -77,8 +77,8 @@ var ctx = c.getContext("2d");
 var drawing = false;
 var startX, startY;
 var allowedPath = [
-    {x: 0, y: 0}, {x: 50, y: 150}, {x: 100, y: 0}, 
-    {x: 150, y: 150}, {x: 200, y: 0}, {x: 250, y: 150}, {x: 300, y: 0}
+    {x: 0, y: 75}, {x: 70, y: 40}, {x: 150, y: 0}, 
+    {x: 225, y: 110}, {x: 300, y: 150}
 ]; // Zigzag-patroon
 var tolerance = 10; // Hoe ver de gebruiker mag afwijken
 
@@ -205,14 +205,26 @@ c.addEventListener("mouseup", function () {
     drawing = false;
 });
 
-// Verkrijg de opgeslagen content uit sessionStorage
-const content = sessionStorage.getItem("containerContent");
+document.addEventListener("DOMContentLoaded", function() {
+    const content = sessionStorage.getItem("containerContent");
+    if (content) {
+        document.getElementById("newContent").textContent = content; 
+    } else {
+        document.getElementById("newContent").textContent = "";
+    }
+});
 
-// Zet de inhoud in het HTML-element
-if (content) {
-    document.getElementById("newContent").textContent = content; // Zet de content in het h1 element
-} else {
-    document.getElementById("newContent").textContent = "Hallo"; // Fallback als geen content is opgeslagen
-}
+document.addEventListener("DOMContentLoaded", function() {
+    const content1 = sessionStorage.getItem("content1") || "";
+    const content2 = sessionStorage.getItem("content2") || "";
+    const content3 = sessionStorage.getItem("content3") || "";
+    const content4 = sessionStorage.getItem("content4") || "";
+    const content5 = sessionStorage.getItem("content5") || "";
 
+    document.getElementById("content1").textContent = content1;
+    document.getElementById("content2").textContent = content2;
+    document.getElementById("content3").textContent = content3;
+    document.getElementById("content4").textContent = content4;
+    document.getElementById("content5").textContent = content5;
+});
 

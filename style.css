@@ -4,7 +4,6 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: lightblue;
   flex-direction: column;
 }
 
@@ -56,6 +55,12 @@ html, body {
   top: 90%; 
   left: 50%; 
   transform: translateX(-50%); 
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 5vh;
 }
 
 
