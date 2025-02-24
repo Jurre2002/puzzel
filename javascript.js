@@ -74,7 +74,7 @@
 var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
 
-var drawing = false;
+
 var startX, startY;
 var allowedPath = [
     {x: 0, y: 75}, {x: 70, y: 40}, {x: 150, y: 0}, 
@@ -152,14 +152,14 @@ function drawAllowedPath() {
     ctx.stroke();
 }
 
-drawAllowedPath(); // We tekenen het pad zodra de pagina laadt
+drawAllowedPath(); 
 
 c.addEventListener("mousedown", function (e) {
     var pos = getMousePos(e);
 
     if (!isAtStart(pos.x, pos.y)) {
         alert("Begin bij de start!");
-        return; // Alleen starten als de gebruiker op het beginpunt klikt
+        return; 
     }
 
     if (isAtEnd(pos.x, pos.y)) {
@@ -178,8 +178,8 @@ c.addEventListener("mousemove", function (e) {
 
         if (!isOnPath(pos.x, pos.y)) {
             alert("Je bent van het pad af! Probeer opnieuw.");
-            ctx.clearRect(0, 0, c.width, c.height); // Wis het canvas
-            drawAllowedPath(); // Teken opnieuw het pad
+            ctx.clearRect(0, 0, c.width, c.height); 
+            drawAllowedPath(); 
             drawing = false;
             return;
         }
@@ -196,6 +196,7 @@ c.addEventListener("mousemove", function (e) {
 
         if (isAtEnd(pos.x, pos.y)) {
             alert("Gefeliciteerd! Je hebt het einde bereikt!");
+            ctx.clearRect(0, 0, c.width, c.height); 
             drawing = false;
         }
     }
