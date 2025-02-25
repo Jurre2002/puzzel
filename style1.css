@@ -62,3 +62,49 @@ h1 {
     right: 10px;
     color: black;
 }
+
+img {
+    margin-top: 10%;
+    width: 120vh;
+    height: 70vh;
+}
+
+.entrance {
+    text-decoration: none;
+    position: absolute;
+    top: 66%;
+    left: 27.7%;
+    opacity: 0;
+}
+
+.raptor {
+    text-decoration: none;
+    position: absolute;
+    top: 60.3%;
+    left: 23.5%;
+    opacity: 0;
+}
+
+.egg {
+    text-decoration: none;
+    position: absolute;
+    top: 62.2%;
+    left: 33.5%;
+    opacity: 0;
+}
+
+.bites {
+    text-decoration: none;
+    position: absolute;
+    top: 58%;
+    left: 35.5%;
+    opacity: 0;
+}
+
+.track {
+    text-decoration: none;
+    position: absolute;
+    top: 44.8%;
+    left: 46.2%;
+    opacity: 0;
+}
