@@ -135,18 +135,17 @@ img {
 .raptor1 img {
     width: 90vh;
     height: 70vh;
-}
-
-.raptor2 {
-    display: none;
+    position: absolute;
+    top: 0%;
+    left: 25%;
 }
 
 .raptor3 a {
     width: 3vh;
     height: 1vh;
     position: absolute;
-    top: 31.2%;
-    left: 42.5%;
+    top: 29.5%;
+    left: 43%;
     border: 1px solid black;
     opacity: 0;
 }
@@ -178,3 +177,55 @@ img {
     left: 51%;
     transform: translate(-50%, -50%);
 }
+
+/* egg style */
+
+.egg1 img {
+    width: 90vh;
+    height: 70vh;
+}
+
+.egg2 a {
+    width: 2vh;
+    height: 3vh;
+    position: absolute;
+    top: 55%;
+    left: 29%;
+    border: 1px solid black;
+    opacity: 0;
+}
+
+/* bites style */
+
+.raptorbites1 img {
+    width: 90vh;
+    height: 70vh;
+}
+
+.raptorbites2 a {
+    width: 2vh;
+    height: 1.7vh;
+    position: absolute;
+    top: 54%;
+    left: 37.8%;
+    border: 1px solid black;
+    opacity: 0;
+}
+
+/* t-rex style */
+
+.t-rex1 img {
+    width: 90vh;
+    height: 70vh;
+}
+
+.t-rex2 a {
+    width: 2.2vh;
+    height: 1.7vh;
+    position: absolute;
+    top: 41%;
+    left: 45.3%;
+    border: 1px solid black;
+    opacity: 0;
+}
+

@@ -9,7 +9,7 @@ closeButtons.forEach(function(button) {
     });
 });
 
-document.getElementById("raptor").addEventListener("click", function() {
+document.getElementById("egg").addEventListener("click", function() {
     document.querySelector(".answer").style.display = "block";
 });
 
@@ -19,8 +19,7 @@ function saveContent(containerClass, key) {
     sessionStorage.setItem(key, content);
 }
 
-document.getElementById("raptor").addEventListener("click", function(event) {
+document.getElementById("egg").addEventListener("click", function(event) {
     event.preventDefault();
-    saveContent("answer", "content1");
+    saveContent("answer", "content2");
 });
-

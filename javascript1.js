@@ -38,12 +38,6 @@
 //     document.querySelector(".container6").style.display = "block";
 // });
 
-// // Functie om de inhoud van een container op te slaan in sessionStorage
-// function saveContent(containerClass, key) {
-//     const content = document.querySelector(`.${containerClass} h1`).textContent; 
-//     sessionStorage.setItem(key, content);
-// }
-
 // // Event listeners voor de knoppen
 // document.getElementById("knop1").addEventListener("click", function(event) {
 //     event.preventDefault();
