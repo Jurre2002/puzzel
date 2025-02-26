@@ -6,7 +6,6 @@
 //     document.querySelector(".container6").style.display = "none";
 // });
 
-
 // document.getElementById("knop2").addEventListener("click", function() {
 //     document.querySelector(".container2").style.display = "none";
 //     document.querySelector(".container3").style.display = "block";
@@ -37,18 +36,6 @@
 //     document.querySelector(".container4").style.display = "none";
 //     document.querySelector(".container5").style.display = "none";
 //     document.querySelector(".container6").style.display = "block";
-// });
-
-
-// const closeButtons = document.querySelectorAll(".close-Button");
-
-
-// closeButtons.forEach(function(button) {
-//     button.addEventListener("click", function(event) {
-//         event.preventDefault(); 
-       
-//         button.closest("div").style.display = "none"; 
-//     });
 // });
 
 // // Functie om de inhoud van een container op te slaan in sessionStorage
@@ -82,6 +69,22 @@
 //     event.preventDefault();
 //     saveContent("container6", "content5");
 // });
+
+const closeButtons = document.querySelectorAll(".close-Button");
+
+
+closeButtons.forEach(function(button) {
+    button.addEventListener("click", function(event) {
+        event.preventDefault(); 
+       
+        button.closest("div").style.display = "none"; 
+    });
+});
+
+document.getElementById("to-do-list").addEventListener("click", function() {
+    document.querySelector(".container2").style.display = "block";}
+);
+
 
 
 
