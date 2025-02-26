@@ -198,6 +198,11 @@ c.addEventListener("mousemove", function (e) {
             alert("Gefeliciteerd! Je hebt het einde bereikt!");
             ctx.clearRect(0, 0, c.width, c.height); 
             drawing = false;
+            content1.remove();
+            content2.remove();
+            content3.remove();
+            content4.remove();
+            content5.remove();
         }
     }
 });
