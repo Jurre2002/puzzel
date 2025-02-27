@@ -94,6 +94,62 @@ img {
     opacity: 0;
 }
 
+.mealstrom {
+    text-decoration: none;
+    position: absolute;
+    top: 51.3%;
+    left: 26.2%;
+    opacity: 0;
+}
+
+.tenders {
+    text-decoration: none;
+    position: absolute;
+    top: 56%;
+    left: 33%;
+    opacity: 0;
+}
+
+.creates_live {
+    text-decoration: none;
+    position: absolute;
+    top: 47.2%;
+    left: 35.7%;
+    opacity: 0;
+}
+
+.trail {
+    text-decoration: none;
+    position: absolute;
+    top: 67.6%;
+    left: 47%;
+    opacity: 0;
+}
+
+.fries {
+    text-decoration: none;
+    position: absolute;
+    top: 55.7%;
+    left: 37.5%;
+    opacity: 0;
+}
+
+.dino_escape {
+    text-decoration: none;
+    position: absolute;
+    top: 59.7%;
+    left: 47.2%;
+    opacity: 0;
+}
+
+.flying {
+    text-decoration: none;
+    position: absolute;
+    top: 44.5%;
+    left: 27.5%;
+    opacity: 0;
+}
+
 /* entrance style */
 
 .entrance1 img {
@@ -252,5 +308,54 @@ img {
     left: 26.6%;
     border: 1px solid black;
     opacity: 0;
+}
+
+/* mealstorm style */
+
+.mealstrom1 img {
+    width: 90vh;
+    height: 70vh;
+}
+
+/* tenders style */
+
+.tenders1 img {
+    width: 90vh;
+    height: 70vh;
+}
+
+/* creates live style */
+
+.creates_live1 img {
+    width: 90vh;
+    height: 70vh;
+}
+
+/* trail style */
+
+.trail1 img {
+    width: 90vh;
+    height: 70vh;
+}
+
+/* fries style */
+
+.fries1 img {
+    width: 90vh;
+    height: 70vh;
+}
+
+/* dino escape style */
+
+.dino_escape1 img {
+    width: 90vh;
+    height: 70vh;
+}
+
+/* flying style */
+
+.flying1 img {
+    width: 90vh;
+    height: 70vh;
 }
 
