@@ -23,3 +23,9 @@ document.getElementById("brachio").addEventListener("click", function(event) {
     event.preventDefault();
     saveContent("answer", "content5");
 });
+
+document.getElementById("brachio").addEventListener("click", function (event) {
+    event.preventDefault(); 
+
+    sessionStorage.setItem("vinkje_pagina_5", "true"); 
+});

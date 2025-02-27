@@ -23,3 +23,9 @@ document.getElementById("t-rex").addEventListener("click", function(event) {
     event.preventDefault();
     saveContent("answer", "content4");
 });
+
+document.getElementById("t-rex").addEventListener("click", function (event) {
+    event.preventDefault(); 
+
+    sessionStorage.setItem("vinkje_pagina_4", "true"); 
+});

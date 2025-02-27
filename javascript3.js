@@ -23,3 +23,9 @@ document.getElementById("egg").addEventListener("click", function(event) {
     event.preventDefault();
     saveContent("answer", "content2");
 });
+
+document.getElementById("egg").addEventListener("click", function (event) {
+    event.preventDefault(); // Voorkomt herladen van de pagina
+
+    sessionStorage.setItem("vinkje_pagina_2", "true"); 
+});

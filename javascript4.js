@@ -23,3 +23,9 @@ document.getElementById("raptorbites").addEventListener("click", function(event)
     event.preventDefault();
     saveContent("answer", "content3");
 });
+
+document.getElementById("raptorbites").addEventListener("click", function (event) {
+    event.preventDefault(); 
+
+    sessionStorage.setItem("vinkje_pagina_3", "true"); 
+});

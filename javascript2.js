@@ -24,3 +24,11 @@ document.getElementById("raptor").addEventListener("click", function(event) {
     saveContent("answer", "content1");
 });
 
+document.getElementById("raptor").addEventListener("click", function (event) {
+    event.preventDefault(); // Voorkomt herladen van de pagina
+
+    sessionStorage.setItem("vinkje_pagina_1", "true"); 
+});
+
+
+
