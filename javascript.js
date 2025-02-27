@@ -80,7 +80,7 @@ var allowedPath = [
     {x: 0, y: 75}, {x: 70, y: 40}, {x: 150, y: 0}, 
     {x: 225, y: 110}, {x: 300, y: 150}
 ]; // Zigzag-patroon
-var tolerance = 10; // Hoe ver de gebruiker mag afwijken
+var tolerance = 20; // Hoe ver de gebruiker mag afwijken
 
 // Functie om de muispositie binnen het canvas te berekenen
 function getMousePos(e) {
