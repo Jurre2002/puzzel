@@ -404,3 +404,19 @@ img {
     height: 70vh;
 }
 
+/* checklist */
+
+.checklist {
+    position: absolute;
+    top: 4%;
+    right: 3%;
+    padding: 1.5vh;
+    border: 0.3vh solid black;
+    border-radius: 100%;
+}
+
+.checklist img {
+    width: 6vh;
+    height: 6vh;
+}
+
