@@ -77,7 +77,7 @@ var ctx = c.getContext("2d");
 
 var startX, startY;
 var allowedPath = [
-    {x: 0, y: 75}, {x: 70, y: 40}, {x: 150, y: 0}, 
+    {x: 150, y: 0}, {x: 70, y: 40}, {x: 0, y: 75}, 
     {x: 225, y: 110}, {x: 300, y: 150}
 ]; // Zigzag-patroon
 var tolerance = 20; // Hoe ver de gebruiker mag afwijken
