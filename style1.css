@@ -406,7 +406,7 @@ img {
 
 /* checklist */
 
-.checklist {
+#checklist {
     position: absolute;
     top: 4%;
     right: 3%;
@@ -418,5 +418,9 @@ img {
 .checklist img {
     width: 6vh;
     height: 6vh;
+}
+
+.checklist {
+    display: none;
 }
 

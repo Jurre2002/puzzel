@@ -98,6 +98,13 @@ document.getElementById("to-do-list").addEventListener("click", function() {
     document.querySelector(".container2").style.display = "block";}
 );
 
+document.getElementById("to-do-list").addEventListener("click", function() {
+    sessionStorage.setItem("checklist", "true");
+});
+
+
+
+
 
 
 
