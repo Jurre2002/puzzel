@@ -29,3 +29,4 @@ document.getElementById("egg").addEventListener("click", function (event) {
 
     sessionStorage.setItem("vinkje_pagina_2", "true"); 
 });
+

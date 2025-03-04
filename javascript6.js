@@ -29,3 +29,4 @@ document.getElementById("brachio").addEventListener("click", function (event) {
 
     sessionStorage.setItem("vinkje_pagina_5", "true"); 
 });
+

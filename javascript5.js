@@ -29,3 +29,4 @@ document.getElementById("t-rex").addEventListener("click", function (event) {
 
     sessionStorage.setItem("vinkje_pagina_4", "true"); 
 });
+

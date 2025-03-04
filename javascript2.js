@@ -30,5 +30,11 @@ document.getElementById("raptor").addEventListener("click", function (event) {
     sessionStorage.setItem("vinkje_pagina_1", "true"); 
 });
 
-
-
+if (!sessionStorage.getItem("iframeLoaded")) {
+    var iframe = document.createElement("iframe");
+    iframe.src = "music.html";
+    iframe.style.display = "none"; // Verberg het iframe
+    iframe.id = "musicFrame";
+    document.body.appendChild(iframe);
+    sessionStorage.setItem("iframeLoaded", "true");
+}
