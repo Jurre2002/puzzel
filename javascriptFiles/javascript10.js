@@ -21,3 +21,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }, 1000);
 });
+
+document.getElementById("flying").addEventListener("click", function() {
+    document.querySelector(".answer").style.display = "block";
+}); 
+
+const closeButtons = document.querySelectorAll(".close-Button");
+closeButtons.forEach(button => {
+    button.addEventListener("click", function() {
+        this.closest(".answer").style.display = "none";
+    });
+});

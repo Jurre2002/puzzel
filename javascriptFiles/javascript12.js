@@ -21,3 +21,18 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }, 1000);
 });
+
+document.getElementById("mealstrom").addEventListener("click", function() {
+    document.querySelector(".answer").style.display = "block";
+});
+
+const closeButtons = document.querySelectorAll(".close-Button");
+
+
+closeButtons.forEach(function(button) {
+    button.addEventListener("click", function(event) {
+        event.preventDefault(); 
+       
+        button.closest("div").style.display = "none"; 
+    });
+});

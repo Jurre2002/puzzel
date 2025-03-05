@@ -362,6 +362,16 @@ img {
     height: 70vh;
 }
 
+.mealstrom2 a {
+    width: 2vh;
+    height: 2vh;
+    position: absolute;
+    top: 54%;
+    left: 56.2%;
+    border: 1px solid black;
+    opacity: 0;
+}
+
 /* tenders style */
 
 .tenders1 img {
@@ -390,6 +400,16 @@ img {
     height: 70vh;
 }
 
+.fries2 a {
+    width: 4.5vh;
+    height: 1.2vh;
+    position: absolute;
+    top: 77.5%;
+    left: 67.5%;
+    border: 1px solid black;
+    opacity: 0;
+}
+
 /* dino escape style */
 
 .dino_escape1 img {
@@ -397,11 +417,31 @@ img {
     height: 70vh;
 }
 
+.dino_escape2 a {
+    width: 2.5vh;
+    height: 2.4vh;
+    position: absolute;
+    top: 73%;
+    left: 44.6%;
+    border: 1px solid black;
+    opacity: 0;
+}
+
 /* flying style */
 
 .flying1 img {
     width: 90vh;
     height: 70vh;
+}
+
+.flying2 a {
+    width: 1.8vh;
+    height: 2.4vh;
+    position: absolute;
+    top: 66.5%;
+    left: 74.5%;
+    border: 1px solid black;
+    opacity: 0;
 }
 
 /* checklist */
