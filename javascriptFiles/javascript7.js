@@ -14,6 +14,7 @@ closeButtons.forEach(function(button) {
     });
 });
 
+const secretAfbeelding = document.querySelector('.secret');
 const voorgrondAfbeelding = document.querySelector('.voorgrond');
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -40,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
         sessionStorage.getItem("vinkje_pagina_5") === "true"
     )   {
         voorgrondAfbeelding.style.display = "none";
+        secretAfbeelding.style.display = "block";
         }
 }); 
 

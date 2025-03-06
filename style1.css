@@ -64,7 +64,7 @@ img {
     text-decoration: none;
     position: absolute;
     top: 66%;
-    left: 27.7%;
+    left: 28.2%;
     opacity: 0;
 }
 
@@ -72,7 +72,7 @@ img {
     text-decoration: none;
     position: absolute;
     top: 60.3%;
-    left: 23.5%;
+    left: 23.7%;
     opacity: 0;
 }
 
@@ -95,8 +95,8 @@ img {
 .track {
     text-decoration: none;
     position: absolute;
-    top: 44.8%;
-    left: 46.2%;
+    top: 44%;
+    left: 46.5%;
     opacity: 0;
 }
 
@@ -111,7 +111,7 @@ img {
 .mealstrom {
     text-decoration: none;
     position: absolute;
-    top: 51.3%;
+    top: 50.3%;
     left: 26.2%;
     opacity: 0;
 }
@@ -127,7 +127,7 @@ img {
 .creates_live {
     text-decoration: none;
     position: absolute;
-    top: 47.2%;
+    top: 46%;
     left: 35.7%;
     opacity: 0;
 }
@@ -151,7 +151,7 @@ img {
 .dino_escape {
     text-decoration: none;
     position: absolute;
-    top: 59.7%;
+    top: 58.5%;
     left: 47.2%;
     opacity: 0;
 }
@@ -159,9 +159,18 @@ img {
 .flying {
     text-decoration: none;
     position: absolute;
-    top: 44.5%;
+    top: 44%;
     left: 27.5%;
     opacity: 0;
+}
+
+.secret {
+    text-decoration: none;
+    position: absolute;
+    top: 34.8%;
+    left: 39.8%;
+    opacity: 0;
+    display: none;
 }
 
 /* entrance style */
@@ -184,7 +193,7 @@ img {
     width: 62vh;
     height: 14vh;
     position: absolute;
-    top: 70%;
+    top: 65%;
     left: 32%;
     border: 1px solid black;
     opacity: 0;
@@ -198,7 +207,7 @@ img {
     width: 90vh;
     height: 90vh;
     position: absolute;
-    top: -12%;
+    top: 5%;
     left: 25%;
 }
 
@@ -216,7 +225,7 @@ img {
     width: 4.8vh;
     height: 4.8vh;
     position: absolute;
-    top: 17.7%;
+    top: 34.7%;
     left: 36.1%;
 }
 
@@ -224,7 +233,7 @@ img {
     width: 4.8vh;
     height: 4.8vh;
     position: absolute;
-    top: 27.5%;
+    top: 44.5%;
     left: 36.1%;
 }
 
@@ -232,7 +241,7 @@ img {
     width: 4.8vh;
     height: 4.8vh;
     position: absolute;
-    top: 37.3%;
+    top: 54.3%;
     left: 36.1%;
 }
 
@@ -240,7 +249,7 @@ img {
     width: 4.8vh;
     height: 4.8vh;
     position: absolute;
-    top: 47.1%;
+    top: 64.1%;
     left: 36.1%;
 }
 
@@ -248,7 +257,7 @@ img {
     width: 4.8vh;
     height: 4.8vh;
     position: absolute;
-    top: 57.0%;
+    top: 74.0%;
     left: 36.1%;
 }
 
@@ -264,8 +273,8 @@ img {
     width: 3vh;
     height: 1vh;
     position: absolute;
-    top: 29.5%;
-    left: 43%;
+    top: 26.5%;
+    left: 42.8%;
     border: 1px solid black;
     opacity: 0;
 }
@@ -278,7 +287,7 @@ img {
     width: 90vh;
     height: 70vh;
     position: absolute;
-    top: 2%;
+    top: 17.5%;
     left: 25%;
 }
 
@@ -309,7 +318,7 @@ img {
     width: 2vh;
     height: 3vh;
     position: absolute;
-    top: 55%;
+    top: 51%;
     left: 29%;
     border: 1px solid black;
     opacity: 0;
@@ -326,7 +335,7 @@ img {
     width: 2vh;
     height: 1.7vh;
     position: absolute;
-    top: 54%;
+    top: 49%;
     left: 37.8%;
     border: 1px solid black;
     opacity: 0;
@@ -343,7 +352,7 @@ img {
     width: 2.2vh;
     height: 1.7vh;
     position: absolute;
-    top: 41%;
+    top: 37%;
     left: 45.3%;
     border: 1px solid black;
     opacity: 0;
@@ -360,7 +369,7 @@ img {
     width: 1.6vh;
     height: 1.7vh;
     position: absolute;
-    top: 81%;
+    top: 76%;
     left: 26.6%;
     border: 1px solid black;
     opacity: 0;
@@ -377,7 +386,7 @@ img {
     width: 2vh;
     height: 2vh;
     position: absolute;
-    top: 54%;
+    top: 50%;
     left: 56.2%;
     border: 1px solid black;
     opacity: 0;
@@ -415,7 +424,7 @@ img {
     width: 4.5vh;
     height: 1.2vh;
     position: absolute;
-    top: 77.5%;
+    top: 73.5%;
     left: 67.5%;
     border: 1px solid black;
     opacity: 0;
@@ -432,7 +441,7 @@ img {
     width: 2.5vh;
     height: 2.4vh;
     position: absolute;
-    top: 73%;
+    top: 68%;
     left: 44.6%;
     border: 1px solid black;
     opacity: 0;
@@ -449,7 +458,7 @@ img {
     width: 1.8vh;
     height: 2.4vh;
     position: absolute;
-    top: 66.5%;
+    top: 62.5%;
     left: 74.5%;
     border: 1px solid black;
     opacity: 0;
@@ -461,7 +470,7 @@ img {
     position: absolute;
     top: 4%;
     right: 3%;
-    padding: 1.5vh;
+    padding: 2vh 1.5vh 1.5vh 1.5vh;
     border: 0.3vh solid black;
     border-radius: 100%;
 }
