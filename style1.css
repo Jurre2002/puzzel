@@ -41,9 +41,23 @@ h1 {
 }
 
 img {
-    margin-top: 10%;
-    width: 120vh;
+    width: 90vh;
     height: 70vh;
+    top: 10%;
+}
+
+.achtergrond {
+    width: 120vh;
+    top: 20%;
+    position: absolute;
+    left: 16%;
+}
+
+.voorgrond {
+    width: 120vh;
+    position: absolute;
+    left: 16%;
+    top: 20%;
 }
 
 .entrance {
@@ -244,9 +258,6 @@ img {
 .raptor1 img {
     width: 90vh;
     height: 70vh;
-    position: absolute;
-    top: 0%;
-    left: 25%;
 }
 
 .raptor3 a {

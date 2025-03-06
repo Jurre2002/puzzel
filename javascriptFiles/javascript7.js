@@ -14,6 +14,8 @@ closeButtons.forEach(function(button) {
     });
 });
 
+const voorgrondAfbeelding = document.querySelector('.voorgrond');
+
 document.addEventListener("DOMContentLoaded", function () {
     // Controleer welke vinkjes zichtbaar moeten zijn
     if (sessionStorage.getItem("vinkje_pagina_1") === "true") {
@@ -31,7 +33,15 @@ document.addEventListener("DOMContentLoaded", function () {
     if (sessionStorage.getItem("vinkje_pagina_5") === "true") {
         document.getElementById("answer5").style.display = "inline";
     }
-});
+    if (sessionStorage.getItem("vinkje_pagina_1") === "true" &&
+        sessionStorage.getItem("vinkje_pagina_2") === "true" &&
+        sessionStorage.getItem("vinkje_pagina_3") === "true" &&
+        sessionStorage.getItem("vinkje_pagina_4") === "true" &&
+        sessionStorage.getItem("vinkje_pagina_5") === "true"
+    )   {
+        voorgrondAfbeelding.style.display = "none";
+        }
+}); 
 
 document.addEventListener("DOMContentLoaded", function () {
     // Controleer welke vinkjes zichtbaar moeten zijn
