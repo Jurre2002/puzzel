@@ -77,10 +77,10 @@ var ctx = c.getContext("2d");
 
 var startX, startY;
 var allowedPath = [
-    {x: 150, y: 0}, {x: 70, y: 40}, {x: 0, y: 75}, 
-    {x: 225, y: 110}, {x: 300, y: 150}
+    {x: 100, y: 0}, {x: 50, y: 28}, {x: 0, y: 50}, {x: 150, y: 72},
+    {x: 195, y: 96}, {x: 195, y: 120}, {x: 295, y: 145},
 ]; // Zigzag-patroon
-var tolerance = 20; // Hoe ver de gebruiker mag afwijken
+var tolerance = 15; // Hoe ver de gebruiker mag afwijken
 
 // Functie om de muispositie binnen het canvas te berekenen
 function getMousePos(e) {
@@ -159,6 +159,7 @@ c.addEventListener("mousedown", function (e) {
 
     if (!isAtStart(pos.x, pos.y)) {
         alert("Begin bij de start!");
+        ctx.clearRect(0, 0, c.width, c.height); 
         return; 
     }
 
@@ -203,6 +204,8 @@ c.addEventListener("mousemove", function (e) {
             content3.remove();
             content4.remove();
             content5.remove();
+            content6.remove();
+            content7.remove();
         }
     }
 });
@@ -227,6 +230,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const content4 = sessionStorage.getItem("content4") || "";
     const content5 = sessionStorage.getItem("content5") || "";
     const content6 = sessionStorage.getItem("content6") || "";
+    const content7 = sessionStorage.getItem("content7") || "";
 
     document.getElementById("content1").textContent = content1;
     document.getElementById("content2").textContent = content2;
@@ -234,6 +238,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("content4").textContent = content4;
     document.getElementById("content5").textContent = content5;
     document.getElementById("content6").textContent = content6;
+    document.getElementById("content7").textContent = content7;
 });
 
 document.addEventListener("DOMContentLoaded", function () {

@@ -361,8 +361,8 @@ img {
     width: 2.2vh;
     height: 1.7vh;
     position: absolute;
-    top: 37%;
-    left: 45.3%;
+    top: 56.5%;
+    left: 40.8%;
     border: 1px solid black;
     opacity: 0;
 }
@@ -499,12 +499,12 @@ audio {
 
 /* secret */
 
-.secret1 img {
+.secret1_1 img {
     width: 90vh;
     height: 70vh;
 }
 
-.secret2 a {
+.secret1_2 a {
     width: 1vh;
     height: 1vh;
     position: absolute;
@@ -516,12 +516,12 @@ audio {
 
 /* secret1 */
 
-.secret1_1 img {
+.secret2_1 img {
     width: 90vh;
     height: 70vh;
 }
 
-.secret2_1 a {
+.secret2_2 a {
     width: 1.3vh;
     height: 1vh;
     position: absolute;
