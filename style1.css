@@ -173,6 +173,15 @@ img {
     display: none;
 }
 
+.secret1 {
+    text-decoration: none;
+    position: absolute;
+    top: 35.1%;
+    left: 45.5%;
+    opacity: 0;
+    display: none;
+}
+
 /* entrance style */
 
 .entrance1 img {
@@ -487,4 +496,40 @@ img {
 audio {
     display: none;
 }
+
+/* secret */
+
+.secret1 img {
+    width: 90vh;
+    height: 70vh;
+}
+
+.secret2 a {
+    width: 1vh;
+    height: 1vh;
+    position: absolute;
+    top: 50%;
+    left: 32%;
+    border: 1px solid black;
+    opacity: 0;
+}
+
+/* secret1 */
+
+.secret1_1 img {
+    width: 90vh;
+    height: 70vh;
+}
+
+.secret2_1 a {
+    width: 1.3vh;
+    height: 1vh;
+    position: absolute;
+    top: 48%;
+    left: 32%;
+    border: 1px solid black;
+    opacity: 0;
+}
+
+
 

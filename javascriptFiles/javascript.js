@@ -226,12 +226,14 @@ document.addEventListener("DOMContentLoaded", function() {
     const content3 = sessionStorage.getItem("content3") || "";
     const content4 = sessionStorage.getItem("content4") || "";
     const content5 = sessionStorage.getItem("content5") || "";
+    const content6 = sessionStorage.getItem("content6") || "";
 
     document.getElementById("content1").textContent = content1;
     document.getElementById("content2").textContent = content2;
     document.getElementById("content3").textContent = content3;
     document.getElementById("content4").textContent = content4;
     document.getElementById("content5").textContent = content5;
+    document.getElementById("content6").textContent = content6;
 });
 
 document.addEventListener("DOMContentLoaded", function () {

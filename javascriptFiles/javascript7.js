@@ -14,6 +14,7 @@ closeButtons.forEach(function(button) {
     });
 });
 
+const secret1Afbeelding = document.querySelector('.secret1');
 const secretAfbeelding = document.querySelector('.secret');
 const voorgrondAfbeelding = document.querySelector('.voorgrond');
 
@@ -42,6 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
     )   {
         voorgrondAfbeelding.style.display = "none";
         secretAfbeelding.style.display = "block";
+        secret1Afbeelding.style.display = "block";
         }
 }); 
 
