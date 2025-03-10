@@ -512,6 +512,32 @@ audio {
     left: 32%;
     border: 1px solid black;
     opacity: 0;
+    display: none;
+}
+
+.keypad img {
+    position: absolute;
+    top: 49.8%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70vh;
+}
+
+.keypad h1 {
+    position: absolute;
+    top: 21.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4em;
+}
+
+#combi_1 {
+    position: absolute;
+    width: 3em;
+    height: 3em;
+    border: 2px solid black;
+    top: 28%;
+    left: 30.2%;
 }
 
 /* secret1 */
