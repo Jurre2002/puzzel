@@ -515,7 +515,7 @@ audio {
     display: none;
 }
 
-.keypad img {
+.keypad-image img {
     position: absolute;
     top: 49.8%;
     left: 50%;
@@ -529,6 +529,11 @@ audio {
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 4em;
+}
+
+.code-display {
+    display: flex;
+    flex-direction: row;
 }
 
 #combi_1 {
@@ -621,11 +626,6 @@ audio {
     opacity: 0;
 }
 
-.keypad h1 img {
-    display: inline-block;
-    gap: 50rem; /* Ruimte tussen afbeeldingen */
-    vertical-align: middle; /* Uitlijning */
-}
 
 /* secret1 */
 
