@@ -53,30 +53,78 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    const keypadDisplay = document.querySelectorAll(".keypad h1"); // Alle <h1>'s selecteren
+    const keypad = document.querySelector(".keypad");
+    const keypadDisplay = document.querySelectorAll(".keypad h1");
     const buttons = document.querySelectorAll(".combination a");
+    const secret = document.getElementById("secret");
+
+    const correctCombination = ["7", "2", "6"]; // Juiste combinatie
+    let currentCombination = [];
+
+    const originalTexts = Array.from(keypadDisplay).map(h1 => h1.textContent);
 
     buttons.forEach((button) => {
         button.addEventListener("click", function (event) {
-            event.preventDefault(); // Voorkomt navigeren
+            event.preventDefault();
 
-            // Zoek het eerste lege <h1>
             for (let i = 0; i < keypadDisplay.length; i++) {
-                if (keypadDisplay[i].children.length === 0) { // Check of <h1> leeg is
-                    keypadDisplay[i].textContent = ""; // Verwijder standaardtekst
+                if (keypadDisplay[i].textContent.trim() !== "") {
+                    keypadDisplay[i].textContent = "";
+                }
 
+                if (keypadDisplay[i].children.length < 3) {
                     const img = document.createElement("img");
-                    const number = button.id.replace("combi_", ""); // Haal nummer uit ID
-                    img.src = `images/symbols/${number}.png`; // Pad aanpassen
+                    const number = button.id.replace("combi_", "");
+                    img.src = `images/symbols/${number}.png`;
                     img.alt = `Symbool ${number}`;
-                    img.style.width = "5rem"; // Grootte aanpassen
-                    img.style.height = "5rem"; 
-                    
+                    img.style.width = "5rem";
+                    img.style.height = "5rem";
 
-                    keypadDisplay[i].appendChild(img); // Voeg afbeelding toe aan de eerste lege <h1>
-                    break; // Stop de loop zodra er een afbeelding is toegevoegd
+                    keypadDisplay[i].appendChild(img);
+                    currentCombination.push(number);
+
+                    // Check als alle getallen zijn ingevuld
+                    if (currentCombination.length === correctCombination.length) {
+                        if (currentCombination.every((num, index) => num === correctCombination[index])) {
+                            showResult("CORRECT!", "green", true); // Toon "CORRECT!"
+                        } else {
+                            showResult("WRONG!", "red", false); // Toon "WRONG!"
+                        }
+                    }
+
+                    break;
                 }
             }
         });
     });
+
+    function showResult(message, color, hideKeypad) {
+        setTimeout(() => {
+            keypadDisplay.forEach((h1) => {
+                h1.innerHTML = `<span style="color: ${color}; font-size: 1em;">${message}</span>`; // Toon bericht
+            });
+            setTimeout(() => {
+                if (hideKeypad) {
+                    keypad.style.display = "none"; // Verberg keypad
+                    document.getElementsByClassName("combination")[0].style.display = "none";
+                    secret.style.display = "block";
+                }
+                else {
+                    clearKeypad();
+                }
+            }, 2000); 
+        }, 750); 
+    }
+
+    function clearKeypad() {
+        keypadDisplay.forEach((h1, index) => {
+            h1.innerHTML = originalTexts[index]; // Wis afbeeldingen en tekst
+        });
+        currentCombination = []; // Reset combinatie
+    }
 });
+
+
+
+
+
