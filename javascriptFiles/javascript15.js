@@ -57,6 +57,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const keypadDisplay = document.querySelectorAll(".keypad h1");
     const buttons = document.querySelectorAll(".combination a");
     const secret = document.getElementById("secret");
+    const wrongSound = new Audio("music/Buzzer sound effect.mp3");
+    const correctSound = new Audio("music/Correct sound effect.mp3");
 
     const correctCombination = ["7", "2", "6"]; // Juiste combinatie
     let currentCombination = [];
@@ -86,12 +88,17 @@ document.addEventListener("DOMContentLoaded", function () {
                     // Check als alle getallen zijn ingevuld
                     if (currentCombination.length === correctCombination.length) {
                         if (currentCombination.every((num, index) => num === correctCombination[index])) {
-                            showResult("CORRECT!", "green", true); // Toon "CORRECT!"
+                            showResult("CORRECT!", "green", true); 
+                            setTimeout(() => {
+                                correctSound.play();
+                            }, 400);
                         } else {
-                            showResult("WRONG!", "red", false); // Toon "WRONG!"
+                            showResult("WRONG!", "red", false); 
+                            setTimeout(() => {
+                                wrongSound.play();
+                            }, 750);
                         }
                     }
-
                     break;
                 }
             }
@@ -118,12 +125,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function clearKeypad() {
         keypadDisplay.forEach((h1, index) => {
-            h1.innerHTML = originalTexts[index]; // Wis afbeeldingen en tekst
+            h1.innerHTML = originalTexts[index]; 
         });
-        currentCombination = []; // Reset combinatie
+        currentCombination = []; 
     }
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    const buttons = document.querySelectorAll(".combination a");
+    const sound = document.getElementById("soundEffect");
+
+    buttons.forEach(button => {
+        button.addEventListener("click", function(event) {
+            event.preventDefault(); // Zorgt ervoor dat de link niet navigeert
+            sound.currentTime = 0; // Reset het geluid voor snelle herhaling
+            sound.play();
+        });
+    });
+});
 
 
 

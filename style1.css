@@ -538,91 +538,97 @@ audio {
 
 #combi_1 {
     position: absolute;
-    width: 12em;
-    height: 9.5em;
+    width: 12.1em;
+    height: 9.9em;
     border: 2px solid black;
-    top: 28%;
-    left: 30.2%;
+    top: 27.8%;
+    left: 30.3%;
     opacity: 0;
+}
+
+#combi_1:hover, #combi_2:hover, #combi_3:hover, #combi_4:hover, #combi_5:hover, #combi_6:hover, #combi_7:hover, #combi_8:hover, #combi_9:hover {
+    cursor: pointer;
+    border: 2px solid red;
+    opacity: 1;
 }
 
 #combi_2 {
     position: absolute;
-    width: 12em;
-    height: 9.5em;
+    width: 12.1em;
+    height: 9.9em;
     border: 2px solid black;
-    top: 28%;
+    top: 27.8%;
     left: 43.5%;
     opacity: 0;
 }
 
 #combi_3 {
     position: absolute;
-    width: 12em;
-    height: 9.5em;
+    width: 12.1em;
+    height: 9.9em;
     border: 2px solid black;
-    top: 28%;
-    left: 56.8%;
+    top: 27.8%;
+    left: 56.6%;
     opacity: 0;
 }
 
 #combi_4 {
     position: absolute;
-    width: 12em;
-    height: 9.5em;
+    width: 12.1em;
+    height: 9.9em;
     border: 2px solid black;
-    top: 47%;
-    left: 30.2%;
+    top: 46.7%;
+    left: 30.3%;
     opacity: 0;
 }
 
 #combi_5 {
     position: absolute;
-    width: 12em;
-    height: 9.5em;
+    width: 12.1em;
+    height: 9.9em;
     border: 2px solid black;
-    top: 47%;
+    top: 46.7%;
     left: 43.5%;
     opacity: 0;
 }
 
 #combi_6 {
     position: absolute;
-    width: 12em;
-    height: 9.5em;
+    width: 12.1em;
+    height: 9.9em;
     border: 2px solid black;
-    top: 47%;
-    left: 56.8%;
+    top: 46.7%;
+    left: 56.6%;
     opacity: 0;
 }
 
 #combi_7 {
     position: absolute;
-    width: 12em;
-    height: 9.5em;
+    width: 12.1em;
+    height: 9.9em;
     border: 2px solid black;
-    top: 66%;
-    left: 30.2%;
+    top: 65.7%;
+    left: 30.3%;
     opacity: 0;
 }
 
 #combi_8 {
     position: absolute;
-    width: 12em;
-    height: 9.5em;
+    width: 12.1em;
+    height: 9.9em;
     border: 2px solid black;
-    top: 66%;
+    top: 65.7%;
     left: 43.5%;
     opacity: 0;
 }
 
 #combi_9 {
     position: absolute;
-    width: 12em;
-    height: 9.5em;
+    width: 12.1em;
+    height: 9.9em;
     border: 2px solid black;
-    top: 66%;
-    left: 56.8%;
+    top: 65.7%;
+    left: 56.6%;
     opacity: 0;
 }
 
