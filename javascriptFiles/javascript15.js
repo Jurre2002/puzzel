@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const wrongSound = new Audio("music/Buzzer sound effect.mp3");
     const correctSound = new Audio("music/Correct sound effect.mp3");
 
-    const correctCombination = ["7", "2", "6"]; // Juiste combinatie
+    const correctCombination = ["8", "4", "6"]; // Juiste combinatie
     let currentCombination = [];
 
     const originalTexts = Array.from(keypadDisplay).map(h1 => h1.textContent);
@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function showResult(message, color, hideKeypad) {
         setTimeout(() => {
             keypadDisplay.forEach((h1) => {
-                h1.innerHTML = `<span style="color: ${color}; font-size: 1em;">${message}</span>`; // Toon bericht
+                h1.innerHTML = `<span style="color: ${color}; font-size: 1em;">${message}</span>`; 
             });
             setTimeout(() => {
                 if (hideKeypad) {
@@ -137,8 +137,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     buttons.forEach(button => {
         button.addEventListener("click", function(event) {
-            event.preventDefault(); // Zorgt ervoor dat de link niet navigeert
-            sound.currentTime = 0; // Reset het geluid voor snelle herhaling
+            event.preventDefault(); 
+            sound.currentTime = 0;
             sound.play();
         });
     });
