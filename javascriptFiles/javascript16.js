@@ -51,3 +51,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }, 1000);
 });
+
+document.getElementById("secret2").addEventListener("click", function() {
+    document.querySelector(".combination").style.display = "block";
+    document.getElementById("combination1").style.display = "block"
+});
+
