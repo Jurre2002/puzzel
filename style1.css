@@ -683,18 +683,49 @@ audio {
     transform: translate(-50%, -50%);
 }
 
-.lock_combinations {
-    display: none;
-}
 
 #combination1 {
     position: absolute;
     width: 3.5em;
-    height: 3.5em;
-    border: 2px solid black;
-    top: 39%;
-    left: 47.5%;
+    height: 4.5em;
+    border: 2px solid blue;
+    top: 42%;
+    left: 48%;
     display: none;
+    opacity: 0;
+}
+
+#combination2 {
+    position: absolute;
+    width: 4.5em;
+    height: 3.5em;
+    border: 2px solid red;
+    top: 58%;
+    left: 57%;
+    display: none;
+    opacity: 0;
+}
+
+#combination3 {
+    position: absolute;
+    width: 3.5em;
+    height: 4.5em;
+    border: 2px solid green;
+    top: 72.5%;
+    left: 48%;
+    display: none;
+    opacity: 0;
+}
+
+#combination4 {
+    position: absolute;
+    width: 4.5em;
+    height: 3.5em;
+    border: 2px solid yellow;
+    top: 58%;
+    left: 38%;
+    display: none;
+    opacity: 0;
 }
 
 
