@@ -61,30 +61,23 @@ document.getElementById("secret2").addEventListener("click", function() {
     document.getElementById("combination5").style.display = "block"
 });
 
-// Array om bij te houden welke combinaties de gebruiker kiest
 let userCombination = [];
 
-// Functie om de afbeelding te updaten op basis van invoer
 function updateCombinationImage() {
     if (userCombination.length === 0) {
-        document.getElementById("combinationImage").src = "images/combination.png";
+        document.getElementById("combinationImage").src = "images/Combination lock(normal).png";
         return;
     }
     
-    let first = userCombination[0]; // Het eerste gekozen getal
-    let count = userCombination.length; // Aantal ingevoerde getallen
-    
-    // Afbeelding aanpassen op basis van invoervolgorde
-    document.getElementById("combinationImage").src = `images/numbers/getal${first}_${count}.png`;
+    let sequence = userCombination.join(""); // Maak een string van de gekozen getallen
+    document.getElementById("combinationImage").src = `images/numbers/combination_${sequence}.png`;
 }
 
-// Functie die een combinatie opslaat
 function enterCombination(id) {
     if (userCombination.length < 4) {
-        userCombination.push(id);
+        userCombination.push(`combination${id}`); // Opslaan als string, zodat het klopt met correctCombination
         updateCombinationImage();
         
-        // Als 4 getallen zijn ingevoerd, controleren we de combinatie
         if (userCombination.length === 4) {
             checkCombination();
         }
@@ -110,18 +103,13 @@ function resetCombination() {
 }
 
 // Event listeners toevoegen aan de combinaties
-document.getElementById("combination1").addEventListener("click", function() {
-    enterCombination(1);
+document.querySelectorAll(".lock_combinations a").forEach((el, index) => {
+    el.addEventListener("click", function() {
+        enterCombination(index + 1);
+    });
 });
-document.getElementById("combination2").addEventListener("click", function() {
-    enterCombination(2);
-});
-document.getElementById("combination3").addEventListener("click", function() {
-    enterCombination(3);
-});
-document.getElementById("combination4").addEventListener("click", function() {
-    enterCombination(4);
-});
+
+
 
 
 
