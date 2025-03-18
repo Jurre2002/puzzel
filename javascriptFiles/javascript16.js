@@ -1,13 +1,3 @@
-const closeButtons = document.querySelectorAll(".close-Button");
-
-
-closeButtons.forEach(function(button) {
-    button.addEventListener("click", function(event) {
-        event.preventDefault(); 
-       
-        button.closest("div").style.display = "none"; 
-    });
-});
 
 document.getElementById("secret1").addEventListener("click", function() {
     document.querySelector(".answer").style.display = "block";
@@ -53,12 +43,105 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.getElementById("secret2").addEventListener("click", function() {
-    document.querySelector(".combination").style.display = "block"; // Toont het slot
+    document.querySelector(".combination").style.display = "block"; 
     document.getElementById("combination1").style.opacity = "1";
     document.getElementById("combination2").style.opacity = "1";
     document.getElementById("combination3").style.opacity = "1";
     document.getElementById("combination4").style.opacity = "1";
+    
+    document.querySelector(".lock_combinations").style.display = "block";  
 });
+
+document.querySelectorAll(".close-Button").forEach(button => {
+    button.addEventListener("click", function(event) {
+        event.preventDefault();
+        
+        
+        button.closest("div").style.display = "none";
+        
+        document.querySelector(".lock_combinations").style.display = "none";
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    let correctCombination = [2, 4, 2, 1]; 
+    let combinationOrder = [1, 2, 3, 4]; 
+    let userCombination = []; 
+    const sImage = document.getElementById("secret1Image");
+    const sAnswer = document.getElementById("secret1")
+
+    function updateCombinationDisplay() {
+        // Koppel de nieuwe posities aan de elementen
+        let positions = [
+            { top: "47%", left: "49.6%" }, // Boven
+            { top: "60.2%", left: "58%" }, // Rechts
+            { top: "74%", left: "49.6%" }, // Onder
+            { top: "60.2%", left: "41%" }  // Links
+        ];
+
+        // Werk de HTML-elementen bij
+        combinationOrder.forEach((num, index) => {
+            let element = document.getElementById(`combination${num}`);
+            element.style.top = positions[index].top;
+            element.style.left = positions[index].left;
+        });
+    }
+
+    function rotateCombination(clickedNumber) {
+        let index = combinationOrder.indexOf(clickedNumber);
+        if (index !== -1) {
+            // Herorganiseer de array zodat het gekozen nummer bovenaan komt
+            combinationOrder = [
+                combinationOrder[index], 
+                combinationOrder[(index + 1) % 4], 
+                combinationOrder[(index + 2) % 4], 
+                combinationOrder[(index + 3) % 4]
+            ];
+            updateCombinationDisplay();
+        }
+    }
+
+    function checkCombination() {
+        // Vergelijk de volgorde van de gebruiker met de juiste combinatie
+        if (userCombination.join('') === correctCombination.join('')) {
+            alert("Je hebt de juiste volgorde! Het slot is open.");
+            // Hier kun je andere acties toevoegen, zoals het openen van een slot of het tonen van een bericht
+            document.getElementsByClassName("combination")[0].style.display = "none";
+            document.getElementsByClassName("iron_fence")[0].style.display = "none";
+            document.getElementsByClassName("lock_combinations")[0].style.display = "none";
+            sImage.style.display = "block";
+            sAnswer.style.display = "block";
+            
+        } else {
+            alert("Helaas, de volgorde klopt niet. Probeer opnieuw.");
+            userCombination = []; // Reset de combinatie als deze fout is
+            combinationOrder = [1, 2, 3, 4]; // Reset de volgorde
+            updateCombinationDisplay();
+        }
+    }
+
+    // Eventlisteners toevoegen aan de cijfers
+    document.querySelectorAll(".lock_combinations a").forEach(element => {
+        element.addEventListener("click", function (event) {
+            event.preventDefault();
+            let clickedNumber = parseInt(this.textContent); // Haal het nummer op
+            rotateCombination(clickedNumber);
+
+            // Voeg het aangeklikte cijfer toe aan de volgorde van de gebruiker
+            userCombination.push(clickedNumber);
+
+            // Controleer of de gebruiker alle cijfers heeft ingevoerd
+            if (userCombination.length === 4) {
+                checkCombination();
+            }
+        });
+    });
+
+    updateCombinationDisplay(); 
+});
+
+
+
 
 
 

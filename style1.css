@@ -716,6 +716,17 @@ audio {
     left: 41%;
 }
 
+.combination a {
+    position: absolute;
+    font-size: 5em;
+    color: black;
+    right: 25%;
+    top: 15%;
+}
+
+
+
+
 
 
 
