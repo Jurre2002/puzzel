@@ -53,61 +53,14 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.getElementById("secret2").addEventListener("click", function() {
-    document.querySelector(".combination").style.display = "block";
-    document.getElementById("combination1").style.display = "block"
-    document.getElementById("combination2").style.display = "block"
-    document.getElementById("combination3").style.display = "block"
-    document.getElementById("combination4").style.display = "block"
-    document.getElementById("combination5").style.display = "block"
+    document.querySelector(".combination").style.display = "block"; // Toont het slot
+    document.getElementById("combination1").style.opacity = "1";
+    document.getElementById("combination2").style.opacity = "1";
+    document.getElementById("combination3").style.opacity = "1";
+    document.getElementById("combination4").style.opacity = "1";
 });
 
-let userCombination = [];
 
-function updateCombinationImage() {
-    if (userCombination.length === 0) {
-        document.getElementById("combinationImage").src = "images/Combination lock(normal).png";
-        return;
-    }
-    
-    let sequence = userCombination.join(""); // Maak een string van de gekozen getallen
-    document.getElementById("combinationImage").src = `images/numbers/combination_${sequence}.png`;
-}
-
-function enterCombination(id) {
-    if (userCombination.length < 4) {
-        userCombination.push(`combination${id}`); // Opslaan als string, zodat het klopt met correctCombination
-        updateCombinationImage();
-        
-        if (userCombination.length === 4) {
-            checkCombination();
-        }
-    }
-}
-
-// Functie om te controleren of de combinatie correct is
-function checkCombination() {
-    const correctCombination = ["combination1", "combination2", "combination3", "combination4"];
-    
-    if (JSON.stringify(userCombination) === JSON.stringify(correctCombination)) {
-        alert("Je hebt de juiste combinatie! 🔓");
-    } else {
-        alert("Fout! Probeer opnieuw. ❌");
-        resetCombination();
-    }
-}
-
-// Functie om alles te resetten
-function resetCombination() {
-    userCombination = [];
-    document.getElementById("combinationImage").src = "images/combination.png";
-}
-
-// Event listeners toevoegen aan de combinaties
-document.querySelectorAll(".lock_combinations a").forEach((el, index) => {
-    el.addEventListener("click", function() {
-        enterCombination(index + 1);
-    });
-});
 
 
 

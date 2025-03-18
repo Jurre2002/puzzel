@@ -683,49 +683,37 @@ audio {
     transform: translate(-50%, -50%);
 }
 
+#combination1, #combination2, #combination3, #combination4 {
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    opacity: 0;
+}
+
+.lock_combinations a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+}
 
 #combination1 {
-    position: absolute;
-    width: 3.5em;
-    height: 4.5em;
-    border: 2px solid blue;
-    top: 42%;
-    left: 48%;
-    display: none;
-    opacity: 0;
+    top: 47%;
+    left: 49.6%;
 }
 
 #combination2 {
-    position: absolute;
-    width: 4.5em;
-    height: 3.5em;
-    border: 2px solid red;
-    top: 58%;
-    left: 57%;
-    display: none;
-    opacity: 0;
+    top: 60.2%;
+    left: 58%;
 }
 
 #combination3 {
-    position: absolute;
-    width: 3.5em;
-    height: 4.5em;
-    border: 2px solid green;
-    top: 72.5%;
-    left: 48%;
-    display: none;
-    opacity: 0;
+    top: 74%;
+    left: 49.6%;
 }
 
 #combination4 {
-    position: absolute;
-    width: 4.5em;
-    height: 3.5em;
-    border: 2px solid yellow;
-    top: 58%;
-    left: 38%;
-    display: none;
-    opacity: 0;
+    top: 60.2%;
+    left: 41%;
 }
 
 
