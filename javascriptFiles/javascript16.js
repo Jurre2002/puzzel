@@ -44,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.getElementById("secret2").addEventListener("click", function() {
     document.querySelector(".combination_1").style.display = "block"; 
+
     document.getElementById("combination1").style.opacity = "1";
     document.getElementById("combination2").style.opacity = "1";
     document.getElementById("combination3").style.opacity = "1";
@@ -115,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }, 2000);
             
         } else {
-            alert("Helaas, de volgorde klopt niet. Probeer opnieuw.");
+            alert("Fout! Probeer opnieuw.");
             userCombination = []; 
             combinationOrder = [1, 2, 3, 4]; 
             updateCombinationDisplay();

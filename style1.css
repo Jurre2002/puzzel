@@ -724,6 +724,15 @@ audio {
     top: 15%;
 }
 
+#cross {
+    display: none;
+    color: red;
+    position: absolute;
+    top: 57%;
+    right: 48%;
+    font-size: 5em;
+}
+
 
 
 
