@@ -13,7 +13,6 @@ document.getElementById("secret").addEventListener("click", function() {
     document.querySelector(".answer").style.display = "block";
 });
 
-// Functie om de inhoud van een container op te slaan in sessionStorage
 function saveContent(containerClass, key) {
     const content = document.querySelector(`.${containerClass} h1`).textContent; 
     sessionStorage.setItem(key, content);
@@ -59,8 +58,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const secret = document.getElementById("secret");
     const wrongSound = new Audio("music/Buzzer sound effect.mp3");
     const correctSound = new Audio("music/Correct sound effect.mp3");
+    const openingKeypad = new Audio("music/openin.mp3");
 
-    const correctCombination = ["8", "4", "6"]; // Juiste combinatie
+    const correctCombination = ["8", "4", "6"];
     let currentCombination = [];
 
     const originalTexts = Array.from(keypadDisplay).map(h1 => h1.textContent);
@@ -85,12 +85,12 @@ document.addEventListener("DOMContentLoaded", function () {
                     keypadDisplay[i].appendChild(img);
                     currentCombination.push(number);
 
-                    // Check als alle getallen zijn ingevuld
                     if (currentCombination.length === correctCombination.length) {
                         if (currentCombination.every((num, index) => num === correctCombination[index])) {
                             showResult("CORRECT!", "green", true); 
                             setTimeout(() => {
                                 correctSound.play();
+                                
                             }, 400);
                         } else {
                             showResult("WRONG!", "red", false); 
@@ -112,9 +112,10 @@ document.addEventListener("DOMContentLoaded", function () {
             });
             setTimeout(() => {
                 if (hideKeypad) {
-                    keypad.style.display = "none"; // Verberg keypad
+                    keypad.style.display = "none";
                     document.getElementsByClassName("combination")[0].style.display = "none";
                     secret.style.display = "block";
+                    openingKeypad.play();
                 }
                 else {
                     clearKeypad();

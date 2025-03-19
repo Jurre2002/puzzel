@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.getElementById("secret2").addEventListener("click", function() {
-    document.querySelector(".combination").style.display = "block"; 
+    document.querySelector(".combination_1").style.display = "block"; 
     document.getElementById("combination1").style.opacity = "1";
     document.getElementById("combination2").style.opacity = "1";
     document.getElementById("combination3").style.opacity = "1";
@@ -55,7 +55,6 @@ document.getElementById("secret2").addEventListener("click", function() {
 document.querySelectorAll(".close-Button").forEach(button => {
     button.addEventListener("click", function(event) {
         event.preventDefault();
-        
         
         button.closest("div").style.display = "none";
         
@@ -69,6 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let userCombination = []; 
     const sImage = document.getElementById("secret1Image");
     const sAnswer = document.getElementById("secret1")
+    const openingLock = new Audio("music/Opening lock.mp3");
 
     function updateCombinationDisplay() {
         // Koppel de nieuwe posities aan de elementen
@@ -102,20 +102,22 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function checkCombination() {
-        // Vergelijk de volgorde van de gebruiker met de juiste combinatie
         if (userCombination.join('') === correctCombination.join('')) {
-            alert("Je hebt de juiste volgorde! Het slot is open.");
-            // Hier kun je andere acties toevoegen, zoals het openen van een slot of het tonen van een bericht
-            document.getElementsByClassName("combination")[0].style.display = "none";
-            document.getElementsByClassName("iron_fence")[0].style.display = "none";
-            document.getElementsByClassName("lock_combinations")[0].style.display = "none";
-            sImage.style.display = "block";
-            sAnswer.style.display = "block";
+            document.getElementById("combinationImage1").style.display = "block";
+            document.getElementById("combinationImage").style.display = "none";
+            openingLock.play();
+            setInterval(() => {
+                document.getElementsByClassName("combination_1")[0].style.display = "none";
+                document.getElementsByClassName("iron_fence")[0].style.display = "none";
+                document.getElementsByClassName("lock_combinations")[0].style.display = "none";
+                sImage.style.display = "block";
+                sAnswer.style.display = "block";
+            }, 2000);
             
         } else {
             alert("Helaas, de volgorde klopt niet. Probeer opnieuw.");
-            userCombination = []; // Reset de combinatie als deze fout is
-            combinationOrder = [1, 2, 3, 4]; // Reset de volgorde
+            userCombination = []; 
+            combinationOrder = [1, 2, 3, 4]; 
             updateCombinationDisplay();
         }
     }
@@ -138,6 +140,19 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     updateCombinationDisplay(); 
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const buttons = document.querySelectorAll(".lock_combinations a");
+    const sound = document.getElementById("clickEffect");
+
+    buttons.forEach(button => {
+        button.addEventListener("click", function(event) {
+            event.preventDefault(); 
+            sound.currentTime = 0;
+            sound.play();
+        });
+    });
 });
 
 

@@ -670,11 +670,11 @@ audio {
     opacity: 0;
 }
 
-.combination {
+.combination_1 {
     display: none;
 }
 
-.combination img {
+.combination_1 img {
     position: absolute;
     width: 30em;
     height: 40em;
@@ -716,7 +716,7 @@ audio {
     left: 41%;
 }
 
-.combination a {
+.combination_1 a {
     position: absolute;
     font-size: 5em;
     color: black;
