@@ -64,7 +64,7 @@ document.querySelectorAll(".close-Button").forEach(button => {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    let correctCombination = [2, 4, 2, 1]; 
+    let correctCombination = [2, 1, 4, 3]; 
     let combinationOrder = [1, 2, 3, 4]; 
     let userCombination = []; 
     const sImage = document.getElementById("secret1Image");
