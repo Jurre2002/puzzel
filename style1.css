@@ -733,6 +733,15 @@ audio {
     font-size: 5em;
 }
 
+.claws img {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30em;
+    height: 7.5em;
+}
+
 
 
 

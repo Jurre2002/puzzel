@@ -106,11 +106,13 @@ document.addEventListener("DOMContentLoaded", function () {
         if (userCombination.join('') === correctCombination.join('')) {
             document.getElementById("combinationImage1").style.display = "block";
             document.getElementById("combinationImage").style.display = "none";
+            document.getElementById("secret2").style.display = "none";
             openingLock.play();
             setInterval(() => {
                 document.getElementsByClassName("combination_1")[0].style.display = "none";
                 document.getElementsByClassName("iron_fence")[0].style.display = "none";
                 document.getElementsByClassName("lock_combinations")[0].style.display = "none";
+                document.getElementById("claw").style.display = "none";
                 sImage.style.display = "block";
                 sAnswer.style.display = "block";
             }, 2000);
