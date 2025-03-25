@@ -13,10 +13,8 @@ html, body {
     gap: 10px;
 }
 
-
-
 .pijl {
-    font-size: 50px;
+    font-size: 6vh;
     position: absolute;
     top: 10%;
     text-decoration: none;
@@ -47,14 +45,14 @@ img {
 }
 
 .achtergrond {
-    width: 120vh;
+    width: 68%;
     top: 20%;
     position: absolute;
     left: 16%;
 }
 
 .voorgrond {
-    width: 120vh;
+    width: 68%;
     position: absolute;
     left: 16%;
     top: 20%;
@@ -182,11 +180,17 @@ img {
     display: none;
 }
 
-.mute i {
+.mute {
     position: absolute;
-    top: 20%;
-    right: 4.3%;
-    font-size: 3em;
+    padding: 2vh 1.5vh 1.5vh 1.5vh;
+    border: 0.3vh solid black;
+    border-radius: 100%;
+    right: 3.2%;
+    top: 18%;
+}
+
+.mute i {
+    font-size: 6vh;
     color: black;
 }
 
@@ -198,10 +202,10 @@ img {
 }
 
 .pijl1 {
-    font-size: 50px;
+    font-size: 6vh;
     position: absolute;
     top: 50%;
-    left: 10%;
+    left: 5%;
     text-decoration: none;
     color: black;
 }
