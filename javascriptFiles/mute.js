@@ -29,11 +29,12 @@
     //     muteButton.style.display = "block";
     // });
 
-    const audioElements = document.querySelectorAll("audio");
+    const audioElements = document.querySelectorAll('audio[data-mute="true"]');
     const muteButton = document.getElementById("mute");
     const unmuteButton = document.getElementById("unmute");
 
     document.addEventListener("DOMContentLoaded", function () {
+    
         let isMuted = sessionStorage.getItem("muted");
 
         if (isMuted === "true") {
