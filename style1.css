@@ -182,6 +182,14 @@ img {
     display: none;
 }
 
+.mute i {
+    position: absolute;
+    top: 20%;
+    right: 4.3%;
+    font-size: 3em;
+    color: black;
+}
+
 /* entrance style */
 
 .entrance1 img {
