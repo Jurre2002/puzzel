@@ -285,16 +285,20 @@ img {
 /* raptor style */
 
 .raptor1 img {
-    width: 90vh;
-    height: 70vh;
+    width: 55%;
+    height: 75%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
 }
 
 .raptor3 a {
     width: 3vh;
-    height: 1vh;
+    height: 2vh;
     position: absolute;
-    top: 26.5%;
-    left: 42.8%;
+    top: 24.7%;
+    left: 42%;
     border: 1px solid black;
     opacity: 0;
 }
@@ -332,16 +336,20 @@ img {
 /* egg style */
 
 .egg1 img {
-    width: 90vh;
-    height: 70vh;
+    width: 55%;
+    height: 75%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
 }
 
 .egg2 a {
-    width: 2vh;
-    height: 3vh;
+    width: 3vh;
+    height: 3.5vh;
     position: absolute;
-    top: 51%;
-    left: 29%;
+    top: 51.2%;
+    left: 27%;
     border: 1px solid black;
     opacity: 0;
 }
@@ -349,16 +357,20 @@ img {
 /* bites style */
 
 .raptorbites1 img {
-    width: 90vh;
-    height: 70vh;
+    width: 55%;
+    height: 75%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
 }
 
 .raptorbites2 a {
-    width: 2vh;
-    height: 1.7vh;
+    width: 2.5vh;
+    height: 2vh;
     position: absolute;
-    top: 49%;
-    left: 37.8%;
+    top: 49.8%;
+    left: 36.8%;
     border: 1px solid black;
     opacity: 0;
 }
@@ -366,16 +378,20 @@ img {
 /* t-rex style */
 
 .t-rex1 img {
-    width: 90vh;
-    height: 70vh;
+    width: 55%;
+    height: 75%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
 }
 
 .t-rex2 a {
     width: 2.2vh;
     height: 1.7vh;
     position: absolute;
-    top: 56.5%;
-    left: 40.8%;
+    top: 57.5%;
+    left: 40%;
     border: 1px solid black;
     opacity: 0;
 }
@@ -383,16 +399,20 @@ img {
 /* brachiosaurus style */
 
 .brachio1 img {
-    width: 90vh;
-    height: 70vh;
+    width: 55%;
+    height: 75%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
 }
 
 .brachio2 a {
-    width: 1.6vh;
-    height: 1.7vh;
+    width: 2vh;
+    height: 2vh;
     position: absolute;
-    top: 76%;
-    left: 26.6%;
+    top: 78.5%;
+    left: 24.8%;
     border: 1px solid black;
     opacity: 0;
 }
@@ -400,8 +420,12 @@ img {
 /* mealstorm style */
 
 .mealstrom1 img {
-    width: 90vh;
-    height: 70vh;
+    width: 55%;
+    height: 75%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
 }
 
 .mealstrom2 a {
@@ -409,7 +433,7 @@ img {
     height: 2vh;
     position: absolute;
     top: 50%;
-    left: 56.2%;
+    left: 56.8%;
     border: 1px solid black;
     opacity: 0;
 }
@@ -438,16 +462,20 @@ img {
 /* fries style */
 
 .fries1 img {
-    width: 90vh;
-    height: 70vh;
+    width: 55%;
+    height: 75%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
 }
 
 .fries2 a {
     width: 4.5vh;
-    height: 1.2vh;
+    height: 1.5vh;
     position: absolute;
-    top: 73.5%;
-    left: 67.5%;
+    top: 74.7%;
+    left: 69.3%;
     border: 1px solid black;
     opacity: 0;
 }
@@ -472,16 +500,20 @@ img {
 /* flying style */
 
 .flying1 img {
-    width: 90vh;
-    height: 70vh;
+    width: 55%;
+    height: 75%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
 }
 
 .flying2 a {
-    width: 1.8vh;
-    height: 2.4vh;
+    width: 2vh;
+    height: 3vh;
     position: absolute;
-    top: 62.5%;
-    left: 74.5%;
+    top: 62.9%;
+    left: 76.5%;
     border: 1px solid black;
     opacity: 0;
 }
@@ -513,20 +545,20 @@ audio {
 /* secret */
 
 .secret1_1 img {
+    width: 55%;
+    height: 75%;
     position: absolute;
+    transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90vh;
-    height: 70vh;
 }
 
 .secret1_2 a {
-    width: 1vh;
-    height: 1vh;
+    width: 1.5vh;
+    height: 1.5vh;
     position: absolute;
     top: 50%;
-    left: 32%;
+    left: 30.5%;
     border: 1px solid black;
     opacity: 0;
     display: none;
@@ -537,12 +569,13 @@ audio {
     top: 49.8%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 70vh;
+    width: 45%;
+    height: 75%;
 }
 
 .keypad h1 {
     position: absolute;
-    top: 21.5%;
+    top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 4em;
@@ -551,11 +584,11 @@ audio {
 
 #combi_1 {
     position: absolute;
-    width: 13%;
-    height: 18.4%;
+    width: 14.8%;
+    height: 20%;
     border: 2px solid black;
-    top: 27.8%;
-    left: 30.3%;
+    top: 26.1%;
+    left: 27.6%;
     opacity: 0;
 }
 
@@ -567,81 +600,81 @@ audio {
 
 #combi_2 {
     position: absolute;
-    width: 13%;
-    height: 18.4%;
+    width: 14.8%;
+    height: 20%;
     border: 2px solid black;
-    top: 27.8%;
-    left: 43.5%;
+    top: 26.1%;
+    left: 42.5%;
     opacity: 0;
 }
 
 #combi_3 {
     position: absolute;
-    width: 13%;
-    height: 18.4%;
+    width: 14.8%;
+    height: 20%;
     border: 2px solid black;
-    top: 27.8%;
-    left: 56.6%;
+    top: 26.1%;
+    left: 57.4%;
     opacity: 0;
 }
 
 #combi_4 {
     position: absolute;
-    width: 13%;
-    height: 18.4%;
+    width: 14.8%;
+    height: 20%;
     border: 2px solid black;
-    top: 46.7%;
-    left: 30.3%;
+    top: 46.4%;
+    left: 27.6%;
     opacity: 0;
 }
 
 #combi_5 {
     position: absolute;
-    width: 13%;
-    height: 18.4%;
+    width: 14.8%;
+    height: 20%;
     border: 2px solid black;
-    top: 46.7%;
-    left: 43.5%;
+    top: 46.4%;
+    left: 42.5%;
     opacity: 0;
 }
 
 #combi_6 {
     position: absolute;
-    width: 13%;
-    height: 18.4%;
+    width: 14.8%;
+    height: 20%;
     border: 2px solid black;
-    top: 46.7%;
-    left: 56.6%;
+    top: 46.4%;
+    left: 57.4%;
     opacity: 0;
 }
 
 #combi_7 {
     position: absolute;
-    width: 13%;
-    height: 18.4%;
+    width: 14.8%;
+    height: 20%;
     border: 2px solid black;
-    top: 65.7%;
-    left: 30.3%;
+    top: 66.7%;
+    left: 27.6%;
     opacity: 0;
 }
 
 #combi_8 {
     position: absolute;
-    width: 13%;
-    height: 18.4%;
+    width: 14.8%;
+    height: 20%;
     border: 2px solid black;
-    top: 65.7%;
-    left: 43.5%;
+    top: 66.7%;
+    left: 42.5%;
     opacity: 0;
 }
 
 #combi_9 {
     position: absolute;
-    width: 13%;
-    height: 18.4%;
+    width: 14.8%;
+    height: 20%;
     border: 2px solid black;
-    top: 65.7%;
-    left: 56.6%;
+    top: 66.7%;
+    left: 57.4%;
     opacity: 0;
 }
 
@@ -649,17 +682,21 @@ audio {
 /* secret1 */
 
 .secret2_1 img {
-    width: 90vh;
-    height: 70vh;
+    width: 55%;
+    height: 75%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
     display: none;
 }
 
 .secret2_2 a {
-    width: 1.3vh;
-    height: 1vh;
+    width: 2vh;
+    height: 2vh;
     position: absolute;
     top: 48%;
-    left: 32%;
+    left: 30.5%;
     border: 1px solid black;
     opacity: 0;
 }
@@ -689,8 +726,8 @@ audio {
 
 .combination_1 img {
     position: absolute;
-    width: 30em;
-    height: 40em;
+    width: 35%;
+    height: 75%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -698,8 +735,6 @@ audio {
 
 #combination1, #combination2, #combination3, #combination4 {
     position: absolute;
-    width: 1em;
-    height: 1em;
     opacity: 0;
 }
 
@@ -707,26 +742,6 @@ audio {
     color: white;
     text-decoration: none;
     font-size: 1.5em;
-}
-
-#combination1 {
-    top: 47%;
-    left: 49.6%;
-}
-
-#combination2 {
-    top: 60.2%;
-    left: 58%;
-}
-
-#combination3 {
-    top: 74%;
-    left: 49.6%;
-}
-
-#combination4 {
-    top: 60.2%;
-    left: 41%;
 }
 
 .combination_1 a {

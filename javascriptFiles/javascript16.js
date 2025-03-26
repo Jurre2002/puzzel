@@ -74,9 +74,9 @@ document.addEventListener("DOMContentLoaded", function () {
     function updateCombinationDisplay() {
         // Koppel de nieuwe posities aan de elementen
         let positions = [
-            { top: "47%", left: "49.6%" }, // Boven
+            { top: "48%", left: "49.6%" }, // Boven
             { top: "60.2%", left: "58%" }, // Rechts
-            { top: "74%", left: "49.6%" }, // Onder
+            { top: "73%", left: "49.6%" }, // Onder
             { top: "60.2%", left: "41%" }  // Links
         ];
 
