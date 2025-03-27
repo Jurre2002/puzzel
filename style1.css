@@ -195,8 +195,12 @@ img {
 /* entrance style */
 
 .entrance1 img {
-    width: 90vh;
-    height: 70vh;
+    width: 55%;
+    height: 75%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
 }
 
 .pijl1 {
@@ -441,22 +445,34 @@ img {
 /* tenders style */
 
 .tenders1 img {
-    width: 90vh;
-    height: 70vh;
+    width: 55%;
+    height: 75%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
 }
 
 /* creates live style */
 
 .creates_live1 img {
-    width: 90vh;
-    height: 70vh;
+    width: 55%;
+    height: 75%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
 }
 
 /* trail style */
 
 .trail1 img {
-    width: 90vh;
-    height: 70vh;
+    width: 55%;
+    height: 75%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
 }
 
 /* fries style */
@@ -483,8 +499,12 @@ img {
 /* dino escape style */
 
 .dino_escape1 img {
-    width: 90vh;
-    height: 70vh;
+    width: 55%;
+    height: 75%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
 }
 
 .dino_escape2 a {
@@ -768,6 +788,14 @@ audio {
     transform: translate(-50%, -50%);
     width: 30em;
     height: 7.5em;
+}
+
+#false {
+    width: 8%;
+    height: 10%;
+    position: absolute;
+    top: 62%;
+    display: none;
 }
 
 

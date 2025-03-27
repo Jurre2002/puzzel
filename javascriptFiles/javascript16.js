@@ -70,6 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const sImage = document.getElementById("secret1Image");
     const sAnswer = document.getElementById("secret1")
     const openingLock = new Audio("music/Opening lock.mp3");
+    const wrongSound = new Audio("music/Buzzer sound effect.mp3");
 
     function updateCombinationDisplay() {
         // Koppel de nieuwe posities aan de elementen
@@ -118,10 +119,14 @@ document.addEventListener("DOMContentLoaded", function () {
             }, 2000);
             
         } else {
-            alert("Fout! Probeer opnieuw.");
+            wrongSound.play();
             userCombination = []; 
             combinationOrder = [1, 2, 3, 4]; 
             updateCombinationDisplay();
+            document.getElementById("false").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("false").style.display = "none";
+            }, 2000);
         }
     }
 
