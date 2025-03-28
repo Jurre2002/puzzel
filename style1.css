@@ -5,7 +5,7 @@ html, body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-  }
+}
 
 .container1 {
     display: flex;
@@ -361,8 +361,8 @@ img {
 /* bites style */
 
 .raptorbites1 img {
-    width: 55%;
-    height: 75%;
+    width: 65%;
+    height: 100%;
     position: absolute;
     transform: translate(-50%, -50%);
     top: 50%;
