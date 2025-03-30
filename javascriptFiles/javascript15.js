@@ -51,6 +51,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 1000);
 });
 
+document.getElementById("get_keypad").addEventListener("click", function() {
+    document.querySelector(".keypad").style.display = "block";
+    document.querySelector(".combination").style.display = "block";
+})
+
 document.addEventListener("DOMContentLoaded", function () {
     const keypad = document.querySelector(".keypad");
     const keypadDisplay = document.querySelectorAll(".keypad h1");
@@ -59,6 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const wrongSound = new Audio("music/Buzzer sound effect.mp3");
     const correctSound = new Audio("music/Correct sound effect.mp3");
     const openingKeypad = new Audio("music/Opening keypad.mp3");
+    const secret1 = document.getElementById("secret1_keypad");
 
     const correctCombination = ["8", "4", "6"];
     let currentCombination = [];
@@ -117,6 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     keypad.style.display = "none";
                     document.getElementsByClassName("combination")[0].style.display = "none";
                     secret.style.display = "block";
+                    secret1.style.display = "block";
                 }
                 else {
                     clearKeypad();
