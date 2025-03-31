@@ -75,33 +75,6 @@ closeButtons.forEach(function(button) {
     });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    // Controleer welke vinkjes zichtbaar moeten zijn
-    if (sessionStorage.getItem("vinkje_pagina_1") === "true") {
-        document.getElementById("answer1").style.display = "inline";
-    }
-    if (sessionStorage.getItem("vinkje_pagina_2") === "true") {
-        document.getElementById("answer2").style.display = "inline";
-    }
-    if (sessionStorage.getItem("vinkje_pagina_3") === "true") {
-        document.getElementById("answer3").style.display = "inline";
-    }
-    if (sessionStorage.getItem("vinkje_pagina_4") === "true") {
-        document.getElementById("answer4").style.display = "inline";
-    }
-    if (sessionStorage.getItem("vinkje_pagina_5") === "true") {
-        document.getElementById("answer5").style.display = "inline";
-    }
-});
-
-document.getElementById("to-do-list").addEventListener("click", function() {
-    document.querySelector(".container2").style.display = "block";}
-);
-
-document.getElementById("to-do-list").addEventListener("click", function() {
-    sessionStorage.setItem("checklist", "true");
-});
-
 // if (!sessionStorage.getItem("iframeLoaded")) {
 //     var iframe = document.createElement("iframe");
 //     iframe.src = "music.html";

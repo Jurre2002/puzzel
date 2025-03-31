@@ -1,8 +1,4 @@
 
-document.getElementById("checklist1").addEventListener("click", function() {
-    document.querySelector(".container2").style.display = "block";}
-);
-
 const closeButtons = document.querySelectorAll(".close-Button");
 
 
@@ -17,6 +13,7 @@ closeButtons.forEach(function(button) {
 const secret1Afbeelding = document.querySelector('.secret1');
 const secretAfbeelding = document.querySelector('.secret');
 const voorgrondAfbeelding = document.querySelector('.voorgrond');
+const achtergrondAfbeelding = document.querySelector('.achtergrond');
 
 document.addEventListener("DOMContentLoaded", function () {
     // Controleer welke vinkjes zichtbaar moeten zijn
@@ -54,6 +51,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+document.getElementById("checklist_link").addEventListener("click", function() {
+    document.querySelector(".container2").style.display = "block";}
+);
+
 document.addEventListener("DOMContentLoaded", function () {
     let audio = document.getElementById("bgMusic");
 
@@ -77,3 +78,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }, 1000);
 });
+
+document.getElementById("map").addEventListener("click", function() {
+    document.getElementsByClassName("voorgrond")[0].style.display = "block";
+    document.getElementsByClassName("achtergrond")[0].style.display = "block";
+    document.getElementsByClassName("links_map")[0].style.display = "block";
+    document.getElementById("map").style.display = "none";
+})
