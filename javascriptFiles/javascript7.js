@@ -14,46 +14,47 @@ const secret1Afbeelding = document.querySelector('.secret1');
 const secretAfbeelding = document.querySelector('.secret');
 const voorgrondAfbeelding = document.querySelector('.voorgrond');
 const achtergrondAfbeelding = document.querySelector('.achtergrond');
+const mapButton = document.getElementById("map"); // Knop die de kaart toont
 
 document.addEventListener("DOMContentLoaded", function () {
     // Controleer welke vinkjes zichtbaar moeten zijn
-    if (sessionStorage.getItem("vinkje_pagina_1") === "true") {
-        document.getElementById("answer1").style.display = "inline";
-    }
-    if (sessionStorage.getItem("vinkje_pagina_2") === "true") {
-        document.getElementById("answer2").style.display = "inline";
-    }
-    if (sessionStorage.getItem("vinkje_pagina_3") === "true") {
-        document.getElementById("answer3").style.display = "inline";
-    }
-    if (sessionStorage.getItem("vinkje_pagina_4") === "true") {
-        document.getElementById("answer4").style.display = "inline";
-    }
-    if (sessionStorage.getItem("vinkje_pagina_5") === "true") {
-        document.getElementById("answer5").style.display = "inline";
-    }
-    if (sessionStorage.getItem("vinkje_pagina_1") === "true" &&
-        sessionStorage.getItem("vinkje_pagina_2") === "true" &&
-        sessionStorage.getItem("vinkje_pagina_3") === "true" &&
-        sessionStorage.getItem("vinkje_pagina_4") === "true" &&
-        sessionStorage.getItem("vinkje_pagina_5") === "true"
-    )   {
-        voorgrondAfbeelding.style.display = "none";
-        secretAfbeelding.style.display = "block";
-        secret1Afbeelding.style.display = "block";
+    for (let i = 1; i <= 5; i++) {
+        if (sessionStorage.getItem(`vinkje_pagina_${i}`) === "true") {
+            document.getElementById(`answer${i}`).style.display = "inline";
         }
-}); 
+    }
 
-document.addEventListener("DOMContentLoaded", function () {
-    // Controleer welke vinkjes zichtbaar moeten zijn
+    // Controleer of de checklist moet worden weergegeven
     if (sessionStorage.getItem("checklist") === "true") {
         document.getElementById("checklist").style.display = "inline";
     }
 });
 
-document.getElementById("checklist_link").addEventListener("click", function() {
-    document.querySelector(".container2").style.display = "block";}
-);
+// Eventlistener voor het openen van de checklist
+document.getElementById("checklist_link").addEventListener("click", function () {
+    document.querySelector(".container2").style.display = "block";
+});
+
+// Eventlistener voor het tonen van de kaart (voorgrond of achtergrond)
+mapButton.addEventListener("click", function () {
+    if (
+        sessionStorage.getItem("vinkje_pagina_1") === "true" &&
+        sessionStorage.getItem("vinkje_pagina_2") === "true" &&
+        sessionStorage.getItem("vinkje_pagina_3") === "true" &&
+        sessionStorage.getItem("vinkje_pagina_4") === "true" &&
+        sessionStorage.getItem("vinkje_pagina_5") === "true"
+    ) {
+        voorgrondAfbeelding.style.display = "none"; 
+        achtergrondAfbeelding.style.display = "block"; 
+        secretAfbeelding.style.display = "block"
+        secret1Afbeelding.style.display = "block"
+    } else {
+        voorgrondAfbeelding.style.display = "block"; 
+        achtergrondAfbeelding.style.display = "none"; 
+    }
+});
+
+
 
 document.addEventListener("DOMContentLoaded", function () {
     let audio = document.getElementById("bgMusic");
@@ -80,8 +81,5 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.getElementById("map").addEventListener("click", function() {
-    document.getElementsByClassName("voorgrond")[0].style.display = "block";
-    document.getElementsByClassName("achtergrond")[0].style.display = "block";
-    document.getElementsByClassName("links_map")[0].style.display = "block";
     document.getElementById("map").style.display = "none";
 })
