@@ -1,10 +1,14 @@
-html, body {
-  height: 100%;
+body {
+  height: 100vh;
   margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-image: url('images/background\(2\).png'); /* Vervang met je eigen pad */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .wrapper {
@@ -22,6 +26,7 @@ html, body {
   font-size: 1.2rem;
   font-weight: bold;
   margin-left: 30px;
+  margin-top: 7vh;
 }
 
 .canvas-container {
@@ -42,8 +47,8 @@ html, body {
 }
 
 #myCanvas {
-  width: 700px;
-  height: 500px;
+  width: 45rem;
+  height: 30rem;
   border: 1px solid black;
 }
 
@@ -52,15 +57,51 @@ html, body {
   color: black;
   text-decoration: none;
   position: absolute;
-  top: 90%; 
+  top: 86%; 
   left: 50%; 
   transform: translateX(-50%); 
 }
 
-.container {
-  display: flex;
-  flex-direction: row;
-  gap: 5vh;
+#content1 {
+  position: absolute;
+  left: 29.9%;
+  top: 11%;
+}
+
+#content2 {
+  position: absolute;
+  left: 36.2%;
+  top: 11%;
+}
+
+#content3 {
+  position: absolute;
+  left: 42.5%;
+  top: 11%;
+}
+
+#content4 {
+  position: absolute;
+  left: 48.8%;
+  top: 11%;
+}
+
+#content5 {
+  position: absolute;
+  left: 55.1%;
+  top: 11%;
+}
+
+#content6 {
+  position: absolute;
+  left: 61.4%;
+  top: 11%;
+}
+
+#content7 {
+  position: absolute;
+  left: 67.4%;
+  top: 11.0%;
 }
 
 
