@@ -104,4 +104,27 @@ body {
   top: 11.0%;
 }
 
+#start {
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+#offTrack {
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+#end {
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
 

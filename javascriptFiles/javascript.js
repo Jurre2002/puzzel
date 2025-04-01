@@ -155,10 +155,16 @@ function drawAllowedPath() {
 drawAllowedPath(); 
 
 c.addEventListener("mousedown", function (e) {
+    const start = document.getElementById("start");
+    const wrongSound = new Audio("music/Buzzer sound effect.mp3");
     var pos = getMousePos(e);
 
     if (!isAtStart(pos.x, pos.y)) {
-        alert("Begin bij de start!");
+        start.style.display = "block";
+        wrongSound.play();
+        setTimeout(() => {
+            start.style.display = "none";
+        }, 2500);
         ctx.clearRect(0, 0, c.width, c.height); 
         return; 
     }
@@ -174,11 +180,19 @@ c.addEventListener("mousedown", function (e) {
 });
 
 c.addEventListener("mousemove", function (e) {
+    const offTrack = document.getElementById("offTrack");
+    const wrongSound = new Audio("music/Buzzer sound effect.mp3");
+    const correctSound = new Audio("music/Correct sound effect.mp3");
+    const end = document.getElementById("end");
     if (drawing) {
         var pos = getMousePos(e);
 
         if (!isOnPath(pos.x, pos.y)) {
-            alert("Je bent van het pad af! Probeer opnieuw.");
+            offTrack.style.display = "block";
+            wrongSound.play();
+            setTimeout(() => {
+                offTrack.style.display = "none";
+            }, 2500);
             ctx.clearRect(0, 0, c.width, c.height); 
             drawAllowedPath(); 
             drawing = false;
@@ -196,7 +210,8 @@ c.addEventListener("mousemove", function (e) {
         startY = pos.y;
 
         if (isAtEnd(pos.x, pos.y)) {
-            alert("Gefeliciteerd! Je hebt het einde bereikt!");
+            end.style.display = "block";
+            correctSound.play();
             ctx.clearRect(0, 0, c.width, c.height); 
             drawing = false;
             content1.remove();
@@ -244,20 +259,17 @@ document.addEventListener("DOMContentLoaded", function() {
 document.addEventListener("DOMContentLoaded", function () {
     let audio = document.getElementById("bgMusic");
 
-    // Controleer of de audio al speelt vanuit een andere pagina
     if (sessionStorage.getItem("audioPlaying")) {
         audio.currentTime = sessionStorage.getItem("audioTime") || 0;
         audio.play();
     }
 
-    // Start muziek en bewaar status in sessionStorage
     document.body.addEventListener("click", function () {
         if (!audio.paused) return;
         audio.play();
         sessionStorage.setItem("audioPlaying", true);
     });
 
-    // Update tijd als gebruiker navigeert
     setInterval(() => {
         if (!audio.paused) {
             sessionStorage.setItem("audioTime", audio.currentTime);

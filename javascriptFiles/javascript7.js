@@ -6,7 +6,9 @@ closeButtons.forEach(function(button) {
     button.addEventListener("click", function(event) {
         event.preventDefault(); 
        
-        button.closest("div").style.display = "none"; 
+        button.closest("div").style.display = "none";
+
+        document.querySelector(".combination").style.display = "none";
     });
 });
 

@@ -240,6 +240,14 @@ img {
     display: none;
 }
 
+.keypad i {
+    position: absolute;
+    font-size: 6vh;
+    top: 19%;
+    left: 88%;
+    color: black;
+}
+
 .mute {
     position: absolute;
     padding: 2vh 1.5vh 1.5vh 1.5vh;
