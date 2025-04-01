@@ -211,6 +211,15 @@ img {
     display: none;
 }
 
+.jurassic_img i {
+    position: absolute;
+    font-size: 6vh;
+    top: 19%;
+    left: 88%;
+    color: black;
+    display: none;
+}
+
 .mute {
     position: absolute;
     padding: 2vh 1.5vh 1.5vh 1.5vh;
@@ -228,7 +237,7 @@ img {
 /* entrance style */
 
 .entrance1 img {
-    width: 70%;
+    width: 65%;
     height: 85%;
     position: absolute;
     transform: translate(-50%, -50%);
@@ -331,11 +340,11 @@ img {
 }
 
 .raptor3 a {
-    width: 2.2vh;
+    width: 2.6vh;
     height: 1.5vh;
     position: absolute;
-    top: 38.9%;
-    left: 40.2%;
+    top: 22.9%;
+    left: 44.7%;
     border: 1px solid black;
     cursor: default;
     opacity: 0;
@@ -386,8 +395,8 @@ img {
     width: 3vh;
     height: 2.5vh;
     position: absolute;
-    top: 52.2%;
-    left: 31.5%;
+    top: 35.2%;
+    left: 32%;
     border: 1px solid black;
     opacity: 0;
     cursor: default;
@@ -408,8 +417,8 @@ img {
     width: 2vh;
     height: 1.5vh;
     position: absolute;
-    top: 52%;
-    left: 37.2%;
+    top: 35.3%;
+    left: 40%;
     border: 1px solid black;
     opacity: 0;
     cursor: default;
@@ -430,8 +439,8 @@ img {
     width: 2.2vh;
     height: 1.7vh;
     position: absolute;
-    top: 56.2%;
-    left: 39%;
+    top: 39%;
+    left: 43.2%;
     border: 1px solid black;
     opacity: 0;
     cursor: default;
@@ -452,8 +461,8 @@ img {
     width: 2vh;
     height: 2vh;
     position: absolute;
-    top: 60.5%;
-    left: 36.8%;
+    top:48.5%;
+    left: 29.8%;
     border: 1px solid black;
     opacity: 0;
     cursor: default;
@@ -529,8 +538,8 @@ img {
     width: 4.5vh;
     height: 1.5vh;
     position: absolute;
-    top: 65%;
-    left: 55.5%;
+    top: 47.2%;
+    left: 65.7%;
     border: 1px solid black;
     opacity: 0;
     cursor: default;
@@ -551,8 +560,8 @@ img {
     width: 2.5vh;
     height: 2.4vh;
     position: absolute;
-    top: 62%;
-    left: 41.6%;
+    top: 44.4%;
+    left: 45.6%;
     border: 1px solid black;
     opacity: 0;
     cursor: default;
@@ -573,8 +582,8 @@ img {
     width: 2.5vh;
     height: 2.4vh;
     position: absolute;
-    top: 58.5%;
-    left: 59.5%;
+    top: 41.9%;
+    left: 71.5%;
     border: 1px solid black;
     opacity: 0;
     cursor: default;
@@ -616,11 +625,11 @@ audio {
 }
 
 .secret1_2 a {
-    width: 1vh;
-    height: 1vh;
+    width: 2vh;
+    height: 2vh;
     position: absolute;
-    top: 52%;
-    left: 33.6%;
+    top: 35%;
+    left: 34.9%;
     border: 1px solid black;
     opacity: 0;
     cursor: default;
@@ -655,11 +664,11 @@ audio {
 
 .get_keypad a {
     position: absolute;
-    width: 15vh;
-    height: 1.5vh;
+    width: 6.5vh;
+    height: 2.5vh;
     border: 1px solid black;
-    top: 57.5%;
-    left: 40.8%;
+    top: 55.5%;
+    left: 27.5%;
     opacity: 0;
 }
 

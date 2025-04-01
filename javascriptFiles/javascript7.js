@@ -14,7 +14,8 @@ const secret1Afbeelding = document.querySelector('.secret1');
 const secretAfbeelding = document.querySelector('.secret');
 const voorgrondAfbeelding = document.querySelector('.voorgrond');
 const achtergrondAfbeelding = document.querySelector('.achtergrond');
-const mapButton = document.getElementById("map"); // Knop die de kaart toont
+const mapButton = document.getElementById("map");
+const jurassicImg = document.querySelector('.jurassic_img');
 
 document.addEventListener("DOMContentLoaded", function () {
     // Controleer welke vinkjes zichtbaar moeten zijn
@@ -23,20 +24,17 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById(`answer${i}`).style.display = "inline";
         }
     }
-
-    // Controleer of de checklist moet worden weergegeven
-    if (sessionStorage.getItem("checklist") === "true") {
-        document.getElementById("checklist").style.display = "inline";
-    }
+    // if (sessionStorage.getItem("checklist") === "true") {
+    //     document.getElementById("checklist").style.display = "inline";
+    // }
 });
 
-// Eventlistener voor het openen van de checklist
 document.getElementById("checklist_link").addEventListener("click", function () {
     document.querySelector(".container2").style.display = "block";
 });
 
-// Eventlistener voor het tonen van de kaart (voorgrond of achtergrond)
 mapButton.addEventListener("click", function () {
+    jurassicImg.style.display = "block";
     if (
         sessionStorage.getItem("vinkje_pagina_1") === "true" &&
         sessionStorage.getItem("vinkje_pagina_2") === "true" &&
@@ -81,5 +79,106 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.getElementById("map").addEventListener("click", function() {
-    document.getElementById("map").style.display = "none";
+    document.getElementsByClassName("fa-close")[0].style.display = "block";
 })
+
+document.getElementById("get_keypad").addEventListener("click", function() {
+    document.querySelector(".keypad").style.display = "block";
+    document.querySelector(".combination").style.display = "block";
+})
+
+document.addEventListener("DOMContentLoaded", function () {
+    const keypad = document.querySelector(".keypad");
+    const keypadDisplay = document.querySelectorAll(".keypad h1");
+    const buttons = document.querySelectorAll(".combination a");
+    const secret = document.getElementById("secret");
+    const wrongSound = new Audio("music/Buzzer sound effect.mp3");
+    const correctSound = new Audio("music/Correct sound effect.mp3");
+    const openingKeypad = new Audio("music/Opening keypad.mp3");
+    const secret1 = document.getElementById("secret1_keypad");
+
+    const correctCombination = ["8", "4", "6"];
+    let currentCombination = [];
+
+    const originalTexts = Array.from(keypadDisplay).map(h1 => h1.textContent);
+
+    buttons.forEach((button) => {
+        button.addEventListener("click", function (event) {
+            event.preventDefault();
+
+            for (let i = 0; i < keypadDisplay.length; i++) {
+                if (keypadDisplay[i].textContent.trim() !== "") {
+                    keypadDisplay[i].textContent = "";
+                }
+
+                if (keypadDisplay[i].children.length < 3) {
+                    const img = document.createElement("img");
+                    const number = button.id.replace("combi_", "");
+                    img.src = `images/symbols/${number}.png`;
+                    img.alt = `Symbool ${number}`;
+                    img.style.width = "5rem";
+                    img.style.height = "5rem";
+
+                    keypadDisplay[i].appendChild(img);
+                    currentCombination.push(number);
+
+                    if (currentCombination.length === correctCombination.length) {
+                        if (currentCombination.every((num, index) => num === correctCombination[index])) {
+                            showResult("CORRECT!", "green", true); 
+                            setTimeout(() => {
+                                correctSound.play();
+                                setTimeout(() => {
+                                    openingKeypad.play();
+                                }, 1000);
+                            }, 400);
+                        } else {
+                            showResult("WRONG!", "red", false); 
+                            setTimeout(() => {
+                                wrongSound.play();
+                            }, 750);
+                        }
+                    }
+                    break;
+                }
+            }
+        });
+    });
+
+    function showResult(message, color, hideKeypad) {
+        setTimeout(() => {
+            keypadDisplay.forEach((h1) => {
+                h1.innerHTML = `<span style="color: ${color}; font-size: 1em;">${message}</span>`; 
+            });
+            setTimeout(() => {
+                if (hideKeypad) {
+                    keypad.style.display = "none";
+                    document.getElementsByClassName("combination")[0].style.display = "none";
+                    sessionStorage.setItem("keyPad", "true");
+                }
+                else {
+                    clearKeypad();
+                }
+            }, 3000); 
+        }, 750); 
+    }
+
+    function clearKeypad() {
+        keypadDisplay.forEach((h1, index) => {
+            h1.innerHTML = originalTexts[index]; 
+        });
+        currentCombination = []; 
+    }
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const buttons = document.querySelectorAll(".combination a");
+    const sound = document.getElementById("soundEffect");
+
+    buttons.forEach(button => {
+        button.addEventListener("click", function(event) {
+            event.preventDefault(); 
+            sound.currentTime = 0;
+            sound.play();
+        });
+    });
+});

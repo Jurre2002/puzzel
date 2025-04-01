@@ -57,100 +57,13 @@ document.getElementById("get_keypad").addEventListener("click", function() {
 })
 
 document.addEventListener("DOMContentLoaded", function () {
-    const keypad = document.querySelector(".keypad");
-    const keypadDisplay = document.querySelectorAll(".keypad h1");
-    const buttons = document.querySelectorAll(".combination a");
-    const secret = document.getElementById("secret");
-    const wrongSound = new Audio("music/Buzzer sound effect.mp3");
-    const correctSound = new Audio("music/Correct sound effect.mp3");
-    const openingKeypad = new Audio("music/Opening keypad.mp3");
     const secret1 = document.getElementById("secret1_keypad");
+    const secret_answer = document.getElementById("secret");
 
-    const correctCombination = ["8", "4", "6"];
-    let currentCombination = [];
-
-    const originalTexts = Array.from(keypadDisplay).map(h1 => h1.textContent);
-
-    buttons.forEach((button) => {
-        button.addEventListener("click", function (event) {
-            event.preventDefault();
-
-            for (let i = 0; i < keypadDisplay.length; i++) {
-                if (keypadDisplay[i].textContent.trim() !== "") {
-                    keypadDisplay[i].textContent = "";
-                }
-
-                if (keypadDisplay[i].children.length < 3) {
-                    const img = document.createElement("img");
-                    const number = button.id.replace("combi_", "");
-                    img.src = `images/symbols/${number}.png`;
-                    img.alt = `Symbool ${number}`;
-                    img.style.width = "5rem";
-                    img.style.height = "5rem";
-
-                    keypadDisplay[i].appendChild(img);
-                    currentCombination.push(number);
-
-                    if (currentCombination.length === correctCombination.length) {
-                        if (currentCombination.every((num, index) => num === correctCombination[index])) {
-                            showResult("CORRECT!", "green", true); 
-                            setTimeout(() => {
-                                correctSound.play();
-                                setTimeout(() => {
-                                    openingKeypad.play();
-                                }, 1000);
-                            }, 400);
-                        } else {
-                            showResult("WRONG!", "red", false); 
-                            setTimeout(() => {
-                                wrongSound.play();
-                            }, 750);
-                        }
-                    }
-                    break;
-                }
-            }
-        });
-    });
-
-    function showResult(message, color, hideKeypad) {
-        setTimeout(() => {
-            keypadDisplay.forEach((h1) => {
-                h1.innerHTML = `<span style="color: ${color}; font-size: 1em;">${message}</span>`; 
-            });
-            setTimeout(() => {
-                if (hideKeypad) {
-                    keypad.style.display = "none";
-                    document.getElementsByClassName("combination")[0].style.display = "none";
-                    secret.style.display = "block";
-                    secret1.style.display = "block";
-                }
-                else {
-                    clearKeypad();
-                }
-            }, 3000); 
-        }, 750); 
-    }
-
-    function clearKeypad() {
-        keypadDisplay.forEach((h1, index) => {
-            h1.innerHTML = originalTexts[index]; 
-        });
-        currentCombination = []; 
-    }
-});
-
-document.addEventListener("DOMContentLoaded", function() {
-    const buttons = document.querySelectorAll(".combination a");
-    const sound = document.getElementById("soundEffect");
-
-    buttons.forEach(button => {
-        button.addEventListener("click", function(event) {
-            event.preventDefault(); 
-            sound.currentTime = 0;
-            sound.play();
-        });
-    });
+ if(sessionStorage.getItem("keyPad") === "true") {
+    secret1.style.display = "block";
+    secret_answer.style.display = "block";
+ }
 });
 
 
