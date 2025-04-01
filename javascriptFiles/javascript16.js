@@ -44,7 +44,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.getElementById("secret2").addEventListener("click", function() {
     document.querySelector(".combination_1").style.display = "block"; 
-
     document.getElementById("combination1").style.opacity = "1";
     document.getElementById("combination2").style.opacity = "1";
     document.getElementById("combination3").style.opacity = "1";
@@ -71,6 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const sAnswer = document.getElementById("secret1")
     const openingLock = new Audio("music/Opening lock.mp3");
     const wrongSound = new Audio("music/Buzzer sound effect.mp3");
+    const closeFence = document.getElementById("fence");
 
     function updateCombinationDisplay() {
         // Koppel de nieuwe posities aan de elementen
@@ -111,9 +111,8 @@ document.addEventListener("DOMContentLoaded", function () {
             openingLock.play();
             setInterval(() => {
                 document.getElementsByClassName("combination_1")[0].style.display = "none";
-                document.getElementsByClassName("iron_fence")[0].style.display = "none";
+                closeFence.style.display = "none";
                 document.getElementsByClassName("lock_combinations")[0].style.display = "none";
-                document.getElementById("claw").style.display = "none";
                 sImage.style.display = "block";
                 sAnswer.style.display = "block";
             }, 2000);
