@@ -75,15 +75,6 @@ closeButtons.forEach(function(button) {
     });
 });
 
-// if (!sessionStorage.getItem("iframeLoaded")) {
-//     var iframe = document.createElement("iframe");
-//     iframe.src = "music.html";
-//     iframe.style.display = "none"; // Verberg het iframe
-//     iframe.id = "musicFrame";
-//     document.body.appendChild(iframe);
-//     sessionStorage.setItem("iframeLoaded", "true");
-// }
-
 document.addEventListener("DOMContentLoaded", function () {
     let audio = document.getElementById("bgMusic");
 

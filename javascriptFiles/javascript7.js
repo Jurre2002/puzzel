@@ -20,7 +20,6 @@ const mapButton = document.getElementById("map");
 const jurassicImg = document.querySelector('.jurassic_img');
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Controleer welke vinkjes zichtbaar moeten zijn
     for (let i = 1; i <= 5; i++) {
         if (sessionStorage.getItem(`vinkje_pagina_${i}`) === "true") {
             document.getElementById(`answer${i}`).style.display = "inline";
@@ -93,11 +92,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const keypad = document.querySelector(".keypad");
     const keypadDisplay = document.querySelectorAll(".keypad h1");
     const buttons = document.querySelectorAll(".combination a");
-    const secret = document.getElementById("secret");
     const wrongSound = new Audio("music/Buzzer sound effect.mp3");
     const correctSound = new Audio("music/Correct sound effect.mp3");
     const openingKeypad = new Audio("music/Opening keypad.mp3");
-    const secret1 = document.getElementById("secret1_keypad");
 
     const correctCombination = ["8", "4", "6"];
     let currentCombination = [];
@@ -117,7 +114,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     const img = document.createElement("img");
                     const number = button.id.replace("combi_", "");
                     img.src = `images/symbols/${number}.png`;
-                    img.alt = `Symbool ${number}`;
                     img.style.width = "5rem";
                     img.style.height = "5rem";
 

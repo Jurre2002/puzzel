@@ -75,10 +75,10 @@ document.addEventListener("DOMContentLoaded", function () {
     function updateCombinationDisplay() {
         // Koppel de nieuwe posities aan de elementen
         let positions = [
-            { top: "48%", left: "49.6%" }, // Boven
-            { top: "60.2%", left: "58%" }, // Rechts
-            { top: "73%", left: "49.6%" }, // Onder
-            { top: "60.2%", left: "41%" }  // Links
+            { top: "48%", left: "49.6%" }, 
+            { top: "60.2%", left: "58%" }, 
+            { top: "73%", left: "49.6%" }, 
+            { top: "60.2%", left: "41%" }  
         ];
 
         // Werk de HTML-elementen bij
@@ -129,17 +129,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Eventlisteners toevoegen aan de cijfers
     document.querySelectorAll(".lock_combinations a").forEach(element => {
         element.addEventListener("click", function (event) {
             event.preventDefault();
-            let clickedNumber = parseInt(this.textContent); // Haal het nummer op
+            let clickedNumber = parseInt(this.textContent); 
             rotateCombination(clickedNumber);
 
-            // Voeg het aangeklikte cijfer toe aan de volgorde van de gebruiker
             userCombination.push(clickedNumber);
-
-            // Controleer of de gebruiker alle cijfers heeft ingevoerd
             if (userCombination.length === 4) {
                 checkCombination();
             }
