@@ -13,7 +13,6 @@ document.getElementById("t-rex").addEventListener("click", function() {
     document.querySelector(".answer").style.display = "block";
 });
 
-// Functie om de inhoud van een container op te slaan in sessionStorage
 function saveContent(containerClass, key) {
     const content = document.querySelector(`.${containerClass} h1`).textContent; 
     sessionStorage.setItem(key, content);
