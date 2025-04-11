@@ -18,6 +18,7 @@ const voorgrondAfbeelding = document.querySelector('.voorgrond');
 const achtergrondAfbeelding = document.querySelector('.achtergrond');
 const mapButton = document.getElementById("map");
 const jurassicImg = document.querySelector('.jurassic_img');
+const showActivities = document.querySelector('.links_map');
 
 document.addEventListener("DOMContentLoaded", function () {
     for (let i = 1; i <= 5; i++) {
@@ -36,6 +37,7 @@ document.getElementById("checklist_link").addEventListener("click", function () 
 
 mapButton.addEventListener("click", function () {
     jurassicImg.style.display = "block";
+    showActivities.style.display = "block";
     if (
         sessionStorage.getItem("vinkje_pagina_1") === "true" &&
         sessionStorage.getItem("vinkje_pagina_2") === "true" &&

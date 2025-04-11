@@ -262,6 +262,10 @@ img {
     color: black;
 }
 
+.links_map {
+    display: none;
+}
+
 /* entrance style */
 
 .entrance1 img {
